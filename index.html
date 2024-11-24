@@ -11,41 +11,69 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="headings">
-        <h1>Martin Schubert</h1>
-        <h2>Tecnico en Programacion</h2>
-        <div class="location">
-          <img src="./assets/location.svg" class="locationImg" />
-          <h3>Buenos Aires, Argentina</h3>
+    <div class="root">
+      <div class="container">
+        <div class="sectionInputs">
+          <label class="radio">
+            <input type="radio" name="radio" checked="" />
+            <span class="name">Home</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="radio" />
+            <span class="name">Educacion</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="radio" />
+            <span class="name">Projects</span>
+          </label>
         </div>
-        <div class="aboutMe">
-          <h3>Sobre mi</h3>
-          <p class="aboutMeText">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
-            sapiente, quia velit dicta ullam necessitatibus pariatur magni rerum
-            facere impedit officiis voluptates dolores qui ipsum amet aperiam
-            labore ab accusamus!
-          </p>
-        </div>
-        <div class="headingBtns">
-          <button class="resume" onclick="downloadCV()">Curriculum</button>
-          <span class="spanLk">
-            <a
-              href="https://www.linkedin.com/in/martin-schubert-44b842240/"
-              target="_blank"
-            >
-              <img src="./assets/linkedinIcon.svg" class="linkedinBtn" />
-            </a>
-          </span>
-          <span class="spanGit">
-            <a href="https://github.com/MartinSchubert04" target="_blank">
-              <img src="./assets/githubIcon.svg" class="githubBtn" />
-            </a>
-          </span>
+        <div class="headings">
+          <h1>Martin Schubert</h1>
+          <h2>Tecnico en Programacion</h2>
+          <div class="location">
+            <img
+              src="./assets/location.svg"
+              class="locationImg"
+              alt="location icon"
+            />
+            <h3>Buenos Aires, Argentina</h3>
+          </div>
+          <div class="aboutMe">
+            <h3>Sobre mi</h3>
+            <p class="aboutMeText">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+              sapiente, quia velit dicta ullam necessitatibus pariatur magni
+              rerum facere impedit officiis voluptates dolores qui ipsum amet
+              aperiam labore ab accusamus!
+            </p>
+          </div>
+          <div class="headingBtns">
+            <button class="resume" onclick="downloadCV()">Curriculum</button>
+            <span class="spanLk">
+              <a
+                href="https://www.linkedin.com/in/martin-schubert-44b842240/"
+                target="_blank"
+              >
+                <img
+                  src="./assets/linkedinIcon.svg"
+                  class="linkedinBtn"
+                  alt="linkedin icon"
+                />
+              </a>
+            </span>
+            <span class="spanGit">
+              <a href="https://github.com/MartinSchubert04" target="_blank">
+                <img
+                  src="./assets/githubIcon.svg"
+                  class="githubBtn"
+                  alt="github icon"
+                />
+              </a>
+            </span>
+          </div>
         </div>
 
-        <div class="edSection">
+        <div id="Educacion" class="edSection">
           <h2 class="edHeding">Educacion</h2>
           <ul class="edList">
             <li>Agosto 2022 - Actualidad</li>
@@ -82,7 +110,28 @@
                   adipisicing elit.
                 </div>
               </div>
-              <div></div>
+            </div>
+            <div class="project" style="border-color: rgb(156, 163, 175)">
+              <img src="./assets/linkedinIcon.svg" />
+
+              <div class="projectInfo">
+                <div class="projectName">Project Name</div>
+                <div class="projectDesc">
+                  Insert project desc -> Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit.
+                </div>
+              </div>
+            </div>
+            <div class="project" style="border-color: rgb(156, 163, 175)">
+              <img src="./assets/linkedinIcon.svg" />
+
+              <div class="projectInfo">
+                <div class="projectName">Project Name</div>
+                <div class="projectDesc">
+                  Insert project desc -> Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit.
+                </div>
+              </div>
             </div>
           </div>
         </div>
