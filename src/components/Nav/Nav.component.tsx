@@ -1,4 +1,5 @@
 import { moon, speakerSlash } from "@assets/index"
+import "./Nav.css"
 
 export const Nav = () => {
   return (

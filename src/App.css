@@ -21,8 +21,12 @@
   --color-background: hsl(0, 0%, 10%);
   --tw-text-opacity: 1;
   --color-light-violet: rgb(231 210 249);
-  --nav-space: 7rem;
-  font-size: 10px;
+  --nav-space: 5rem;
+  font-size: 16px;
+}
+
+* {
+  font-family: "Manrope", sans-serif;
 }
 
 body {
@@ -34,4 +38,9 @@ body {
 .text-primarytext {
   --tw-text-opacity: 1;
   color: rgb(255 255 227 / var(--tw-text-opacity));
+}
+
+.text-violet-text {
+  --tw-text-opacity: 1;
+  color: rgb(163 116 255 / var(--tw-text-opacity));
 }
