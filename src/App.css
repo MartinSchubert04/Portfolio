@@ -4,7 +4,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(0, 0%, 10%);
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -19,6 +19,8 @@
 :root {
   --radius: 0.5rem;
   --color-background: hsl(0, 0%, 10%);
+  --tw-text-opacity: 1;
+  --primary-color: rgb(255 255 227 / var(--tw-text-opacity));
   --tw-text-opacity: 1;
   --color-light-violet: rgb(231 210 249);
   --nav-space: 5rem;
@@ -36,8 +38,7 @@ body {
 }
 
 .text-primarytext {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 227 / var(--tw-text-opacity));
+  color: var(--primary-color);
 }
 
 .text-violet-text {
