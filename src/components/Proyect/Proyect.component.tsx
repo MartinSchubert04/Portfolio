@@ -32,7 +32,7 @@ const Project = ({ project }: ProjectProps) => {
           </div>
         </div>
         <div className="flex flex-row flex-wrap items-start gap-1 ">
-          <a target="_blank" href={project.imgURL}>
+          <a target="_blank" href={project.sourceLink}>
             <div className="items-center rounded-sm font-semibold transition-colors focus:outline-none bg-transparent  text-[#909097] dark:text-[#e7d2f9]   flex gap-2 px-2 py-2 text-[12px]  ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -45,3 +45,9 @@ body {
   --tw-text-opacity: 1;
   color: rgb(163 116 255 / var(--tw-text-opacity));
 }
+
+@media (max-width: 768px) {
+  :root {
+    --nav-space: 4rem;
+  }
+}

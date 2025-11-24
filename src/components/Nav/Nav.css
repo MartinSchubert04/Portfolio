@@ -4,6 +4,7 @@ nav {
   align-items: center;
   width: 100%;
   max-width: 768px;
+  gap: 1rem;
 }
 
 .nav-container {
