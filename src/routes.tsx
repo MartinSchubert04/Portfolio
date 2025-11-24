@@ -10,7 +10,7 @@ export const AppRoutes = () => (
 )
 
 export const AppRouter = () => (
-  <Router>
+  <Router basename="/Portfolio">
     <AppRoutes />
   </Router>
 )
