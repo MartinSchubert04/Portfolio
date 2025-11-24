@@ -11,8 +11,8 @@ export const Carreer = () => {
         <section className="flex items-center justify-center bg-transparent text-gray-200">
           <div className="flex flex-col md:flex-row max-w-6xl w-full mx-auto bg-transparent rounded-lg overflow-hidden min-h-[400px]">
             {/* NAV */}
-            <nav className="relative flex-shrink-0 w-full md:w-60 border-r border-transparent [border-image:linear-gradient(to_bottom,transparent,#e4e4e7,#e4e4e7,#e4e4e7,transparent)_1] dark:[border-image:linear-gradient(to_bottom,transparent,#362843,#362843,#362843,transparent)_1] py-5 flex md:flex-col overflow-x-auto md:overflow-y-auto whitespace-nowrap">
-              <div className="relative px-2 py-3 cursor-pointer text-sm font-normal blur-none text-zinc-400 dark:text-[#e7d2f9] transition-colors duration-300 md:w-full inline-block md:block text-zinc-500 dark:text-[#8a2be2] font-bold">
+            <nav className="relative shrink-0 w-full md:w-60 border-r border-transparent [border-image:linear-gradient(to_bottom,transparent,#e4e4e7,#e4e4e7,#e4e4e7,transparent)_1] dark:[border-image:linear-gradient(to_bottom,transparent,#362843,#362843,#362843,transparent)_1] py-5 flex md:flex-col overflow-x-auto md:overflow-y-auto whitespace-nowrap">
+              <div className="relative px-2 py-3 cursor-pointer text-sm font-normal blur-none text-zinc-400 dark:text-[#e7d2f9] transition-colors duration-300 md:w-full inline-block md:block dark:text-[#8a2be2]">
                 Liverpool John Moores University
                 <div
                   className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-zinc-500 dark:bg-[#8a2be2] rounded-r-sm"
@@ -131,19 +131,6 @@ export const Carreer = () => {
             </div>
           </div>
         </section>
-      </div>
-
-      {/* BACKSIDE (3D FLIP) */}
-      <div
-        className="w-full absolute flex items-center min-h-[400px] backface-hidden"
-        style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-      >
-        {/* <mux-player
-          player-software-name="mux-player-react"
-          player-software-version="3.9.0"
-          accent-color="#ab66fd"
-          playback-id="zGogrLp7lNNilGtRENeLzOw72Dnm3jzlbwdQUwcc46w"
-        /> */}
       </div>
     </div>
   )

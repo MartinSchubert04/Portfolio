@@ -22,7 +22,7 @@ export function ParticleBackground() {
           color: "var(--color-background)",
         },
         particles: {
-          number: { value: 120 },
+          number: { value: 150 },
           move: { enable: true, speed: 0.5 },
           size: {
             value: {

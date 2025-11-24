@@ -46,6 +46,10 @@ body {
   color: rgb(163 116 255 / var(--tw-text-opacity));
 }
 
+.text-manrope {
+  font-family: "Manrope";
+}
+
 @media (max-width: 768px) {
   :root {
     --nav-space: 4rem;

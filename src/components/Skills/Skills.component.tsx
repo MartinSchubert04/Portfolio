@@ -34,7 +34,7 @@ export const SkillSet = () => {
   return (
     <div className="px-3 flex flex-col w-full border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,#362843,transparent)_1] matsu_border_side ">
       <div className="mt-10">
-        <p className="text-[oklch(70.5% 0.015 286.067)] dark:text-zinc-400 text-sm font-light">Core</p>
+        <p className="text-manrope text-[oklch(70.5% 0.015 286.067)] dark:text-zinc-400 text-sm font-light">Core</p>
         <span className="text-primarytext font-bold text-xl sm:text-2xl md:text-2xl lg:text-2xl ">Skills</span>
         <div className="flex flex-wrap gap-1.5 pt-4 sm:pt-8 w-full">
           {skills.map((s) => (
