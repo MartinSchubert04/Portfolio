@@ -1,4 +1,36 @@
 import { SocialSet } from "@components/Social/Social.component"
+
+const ResumeButton = () => {
+  return (
+    <a
+      href="@assets/MartinSchubert.pdf"
+      download="@assets/MartinSchubert.pdf"
+      className="cursor-pointer group h-15 relative flex  items-center gap-3 px-8 p-1 mr-4 bg-opacity-0 text-[#f1f1f1]  border border-px rounded-full border-bline bg-transparent hover:bg-opacity-70  transition font-semibold shadow-md"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24px" width="24px">
+        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+        <g id="SVGRepo_iconCarrier">
+          <g id="Interface / Download">
+            <path
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#f1f1f1"
+              d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
+              id="Vector"
+            ></path>
+          </g>
+        </g>
+      </svg>
+      Resume
+      <div className="absolute opacity-0 -bottom-3/4 rounded-md py-2 px-2 bg-transparent  left-1/2 -translate-x-1/2 group-hover:opacity-100 transition-opacity ">
+        Download
+      </div>
+    </a>
+  )
+}
+
 export const Header = () => {
   return (
     <>
@@ -7,9 +39,13 @@ export const Header = () => {
       </div>
       <div className="carreer-header px-3 pt-6 flex flex-col intro w-full  border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,#362843,transparent)_1] matsu_border_side">
         <h1 className="text-primarytext font-bold text-3xl sm:text-4xl ">Martin Schubert</h1>
-        <h3 className="pt-2 text-violet-text text-md sm:text-xl  text-[#e7d2f9] ">Fullstack Developer</h3>
+        <h3 className="pt-2 text-violet-text text-md sm:text-xl">Fullstack Developer</h3>
+
         <div className="text-sm font-bold mt-5 sm:mt-7 text-zinc-400 ">Contact with me, here are my socials</div>
-        <SocialSet />
+        <div className="flex w-full justify-between items-center mt-2">
+          <SocialSet />
+          <ResumeButton />
+        </div>
       </div>
     </>
   )

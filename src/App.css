@@ -46,6 +46,11 @@ body {
   color: rgb(163 116 255 / var(--tw-text-opacity));
 }
 
+.border-bline {
+  --tw-border-opacity: 1;
+  border-color: rgb(50 50 40 / var(--tw-border-opacity));
+}
+
 .text-manrope {
   font-family: "Manrope";
 }
