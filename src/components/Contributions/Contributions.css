@@ -1,0 +1,7 @@
+.loading-wheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  color: var(--color-shadow);
+}
