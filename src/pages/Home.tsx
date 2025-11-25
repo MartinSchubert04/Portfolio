@@ -5,6 +5,8 @@ import { SkillSet } from "@components/Skills/Skills.component"
 import { ProyectSet } from "@components/Proyect/Proyect.component"
 import { Carreer } from "@components/Carreer/Carreer.component"
 import { ParticleBackground } from "@utils/ParticlesBackground"
+import { Contributions } from "@components/Contributions/Contributions.component"
+
 export const Home = () => {
   return (
     <main className="wrapper">
@@ -17,6 +19,7 @@ export const Home = () => {
           <Carreer />
           <SkillSet />
           <ProyectSet />
+          <Contributions />
         </div>
       </section>
     </main>
