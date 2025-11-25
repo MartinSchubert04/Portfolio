@@ -1,0 +1,77 @@
+name: Generate Commit Data
+
+on:
+  schedule:
+    - cron: "0 * * * *" # cada 1 hora (puede ser una vez al día)
+  workflow_dispatch: # permitir ejecutarlo manualmente
+  push:
+    branches: [main] # o la rama que uses
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install deps
+        run: npm install axios
+
+      - name: Fetch GitHub Contributions
+        run: |
+          node << 'EOF'
+          import axios from "axios";
+          import fs from "fs";
+
+          const token = process.env.GH_TOKEN;
+          const username = "MartinSchubert04";
+
+          const query = `
+            query {
+              user(login: "${username}") {
+                contributionsCollection {
+                  contributionCalendar {
+                    weeks {
+                      contributionDays {
+                        date
+                        contributionCount
+                        color
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          `;
+
+          const body = { query };
+
+          await axios.post("https://api.github.com/graphql", body, {
+            headers: {
+              Authorization: \`bearer ${token}\`,
+              "Content-Type": "application/json",
+            },
+          }).then(res => {
+            const weeks =
+              res.data.data.user.contributionsCollection.contributionCalendar.weeks;
+
+            fs.writeFileSync("public/commits.json", JSON.stringify(weeks, null, 2));
+            console.log("commits.json generado");
+          });
+          EOF
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Commit and push new data
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git add public/commits.json
+          git commit -m "Update commits data" || echo "No changes to commit"
+          git push
