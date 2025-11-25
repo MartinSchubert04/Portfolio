@@ -43,7 +43,7 @@ const Project = ({ project }: ProjectProps) => {
         <span className="text-sm text-zinc-500 font-medium">Tech-stack</span>
         <div className=" flex flex-wrap gap-1">
           {project.techStack.map((techName) => (
-            <ProjectTech nombre={techName} />
+            <ProjectTech nombre={techName} key={techName} />
           ))}
         </div>
 

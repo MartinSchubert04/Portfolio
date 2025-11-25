@@ -6,7 +6,7 @@ import * as Tooltip from "@radix-ui/react-tooltip"
 function App() {
   return (
     <div className="App">
-      <Tooltip.Provider>
+      <Tooltip.Provider delayDuration={100} skipDelayDuration={0}>
         <AppRouter />
         <ToastContainer />
       </Tooltip.Provider>

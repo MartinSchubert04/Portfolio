@@ -113,7 +113,7 @@ export const Carreer = () => {
                         className="inline-flex items-center text-xs sm:text-sm bg-black/5 dark:bg-[#ab66fd]/15 border border-dashed border-[#909092] dark:border-[#e7d2f9]/30 py-1 px-2 rounded-md skill-inner-shadow text-[#909092] dark:text-white"
                         href="https://www.python.org/"
                       >
-                        <img alt="Python" src="/icons/python.svg" className="size-4" />
+                        <img alt="Python" src="@assets/icons/python.svg" className="size-4" />
                       </a>
 
                       {/* ... repetir para los demás íconos ... */}

@@ -18,7 +18,8 @@
 
 :root {
   --radius: 0.5rem;
-  --color-background: hsl(0, 0%, 10%);
+  --color-background: hsl(0, 0%, 13%);
+
   --tw-text-opacity: 1;
   --primary-color: rgb(255 255 227 / var(--tw-text-opacity));
   --tw-text-opacity: 1;
