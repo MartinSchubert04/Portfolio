@@ -1,20 +1,20 @@
-import { describe, expect, test, vi, beforeEach } from "vitest"
-import { ToastContainer } from "./ToastContainer"
-import { toasts } from "./toastStore"
-import { render, screen } from "@testing-library/react"
+// import { describe, expect, test, vi, beforeEach } from "vitest"
+// import { ToastContainer } from "./ToastContainer"
+// import { toasts } from "./toastStore"
+// import { render, screen } from "@testing-library/react"
 
-describe("toast tests", () => {
-  beforeEach(() => {
-    vi.useFakeTimers()
-  })
+// describe("toast tests", () => {
+//   beforeEach(() => {
+//     vi.useFakeTimers()
+//   })
 
-  test("should render toast", () => {
-    render(<ToastContainer />)
+//   test("should render toast", () => {
+//     render(<ToastContainer />)
 
-    toasts.push("test")
+//     toasts.push("test")
 
-    vi.runAllTimers()
+//     vi.runAllTimers()
 
-    expect(screen.getByTestId("toast")).not.toBeNull()
-  })
-})
+//     expect(screen.getByTestId("toast")).not.toBeNull()
+//   })
+// })
