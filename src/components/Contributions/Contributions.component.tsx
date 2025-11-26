@@ -2,7 +2,7 @@ import { githubService } from "@components/service/Github.service"
 import { useOnInit } from "@hooks/hooks"
 import { showError } from "@utils/errorHandling"
 import { useState } from "react"
-import { prepareContributionDataFlat, type ContributionDay } from "./DataFormmat"
+import { prepareContributionDataFlat } from "./DataFormmat"
 import * as Tooltip from "@radix-ui/react-tooltip"
 import { CircularProgress } from "@mui/material"
 import "./Contributions.css"
@@ -74,7 +74,7 @@ export const Contributions = () => {
   const [contributionDays, setContributionDays] = useState<ContributionDay[]>([])
   const [totalContributions, setTotalContributions] = useState<number>(0)
   const [loading, setLoading] = useState(false)
-  const currentYear = useState<number>(new Date().getFullYear())
+  const currentYear = new Date().getFullYear()
 
   useOnInit(async () => {
     try {
@@ -83,18 +83,21 @@ export const Contributions = () => {
 
       const allContributions = contributionsData.contributions
 
+      setTotalContributions(contributionsData.total[currentYear])
+
       const today = new Date()
       today.setHours(0, 0, 0, 0)
 
       const oneYearAgo = new Date(today)
       oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1)
 
-      const lastYearContributions = allContributions.filter((c) => {
+      // eslint-disable-next-line
+      const lastYearContributions = allContributions.filter((c: any) => {
         const d = new Date(c.date)
         return d >= oneYearAgo && d <= today
       })
-
-      lastYearContributions.sort((a, b) => new Date(a.date) - new Date(b.date))
+      // eslint-disable-next-line
+      lastYearContributions.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
       setContributionDays(prepareContributionDataFlat(lastYearContributions))
 
@@ -114,13 +117,13 @@ export const Contributions = () => {
         </p>
         <span className="text-primarytext text-xl sm:text-2xl md:text-2xl lg:text-2xl font-bold mb-10">Github</span>
 
-        <div className="flex w-max max-w-full flex-col gap-2 mx-auto py-2">
-          <div className="max-w-full overflow-x-auto overflow-y-hidden no-scrollbar" title="GitHub Contributions">
-            {loading ? (
-              <div className="loading-wheel">
-                <CircularProgress color="inherit" />
-              </div>
-            ) : (
+        {loading ? (
+          <div className="loading-wheel">
+            <CircularProgress color="inherit" />
+          </div>
+        ) : (
+          <div className="flex w-max max-w-full flex-col gap-2 mx-auto py-2">
+            <div className="max-w-full overflow-x-auto overflow-y-hidden no-scrollbar" title="GitHub Contributions">
               <svg className="flex items-center overflow-visible" height="117" viewBox="0 0 739 117" width="739">
                 <title>Contribution Graph</title>
                 <g className="text-primarytext fill-current">
@@ -173,72 +176,72 @@ export const Contributions = () => {
                   />
                 ))}
               </svg>
-            )}
-          </div>
-          <div className="flex flex-wrap w-full justify-between gap-1 whitespace-nowrap sm:gap-x-4 px-2">
-            <div className="text-manrope text-primarytext text-muted-foreground">
-              {totalContributions} contributions in {} on{" "}
-              <a
-                className="text-primarytext font-medium underline underline-offset-4"
-                href="https://github.com/MartinSchubert04"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub
-              </a>
-              .
             </div>
-            <div className="ml-auto flex items-center gap-[3px]">
-              <span className="text-primarytext mr-1 text-muted-foreground">Less</span>
-              <svg height="11" width="11">
-                <rect
-                  className={`fill-muted-foreground/5 dark:fill-[#151b23] `}
-                  height="11"
-                  rx="2"
-                  ry="2"
-                  width="11"
-                ></rect>
-              </svg>
-              <svg height="11" width="11">
-                <rect
-                  className={`fill-muted-foreground/5 dark:fill-[#033a16]`}
-                  height="11"
-                  rx="2"
-                  ry="2"
-                  width="11"
-                ></rect>
-              </svg>
-              <svg height="11" width="11">
-                <rect
-                  className={`fill-muted-foreground/5 dark:fill-[#196c2e]`}
-                  height="11"
-                  rx="2"
-                  ry="2"
-                  width="11"
-                ></rect>
-              </svg>
-              <svg height="11" width="11">
-                <rect
-                  className={`fill-muted-foreground/5 dark:fill-[#2ea043]`}
-                  height="11"
-                  rx="2"
-                  ry="2"
-                  width="11"
-                ></rect>
-              </svg>
-              <svg height="11" width="11">
-                <rect
-                  className={`fill-muted-foreground/5 dark:fill-[#56d364]`}
-                  height="11"
-                  rx="2"
-                  ry="2"
-                  width="11"
-                ></rect>
-              </svg>
-              <span className="text-primarytext ml-1 text-muted-foreground">More</span>
+            <div className="flex flex-wrap w-full justify-between gap-1 whitespace-nowrap sm:gap-x-4 px-2">
+              <div className="text-manrope text-primarytext text-muted-foreground">
+                {totalContributions} contributions on {currentYear} in{" "}
+                <a
+                  className="text-primarytext font-medium underline underline-offset-4"
+                  href="https://github.com/MartinSchubert04"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub
+                </a>
+                .
+              </div>
+              <div className="ml-auto flex items-center gap-[3px]">
+                <span className="text-primarytext mr-1 text-muted-foreground">Less</span>
+                <svg height="11" width="11">
+                  <rect
+                    className={`fill-muted-foreground/5 dark:fill-[#151b23] `}
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    width="11"
+                  ></rect>
+                </svg>
+                <svg height="11" width="11">
+                  <rect
+                    className={`fill-muted-foreground/5 dark:fill-[#033a16]`}
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    width="11"
+                  ></rect>
+                </svg>
+                <svg height="11" width="11">
+                  <rect
+                    className={`fill-muted-foreground/5 dark:fill-[#196c2e]`}
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    width="11"
+                  ></rect>
+                </svg>
+                <svg height="11" width="11">
+                  <rect
+                    className={`fill-muted-foreground/5 dark:fill-[#2ea043]`}
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    width="11"
+                  ></rect>
+                </svg>
+                <svg height="11" width="11">
+                  <rect
+                    className={`fill-muted-foreground/5 dark:fill-[#56d364]`}
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    width="11"
+                  ></rect>
+                </svg>
+                <span className="text-primarytext ml-1 text-muted-foreground">More</span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </Tooltip.Provider>
   )
