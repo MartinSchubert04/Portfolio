@@ -1,9 +1,9 @@
-name: Deploy Vite App from v2
+name: Deploy build
 
 on:
   push:
     branches:
-      - v2 # branch de la build
+      - main
 
 permissions:
   contents: write
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: v2 # branch de la build
+          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v4
