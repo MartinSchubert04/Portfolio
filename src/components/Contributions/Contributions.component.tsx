@@ -70,6 +70,14 @@ const RectContribution = ({ count, date, level, x, y }: RectContributionProps) =
   )
 }
 
+interface ContributionDay {
+  date: string
+  contributionCount: number
+  level: number
+  x: number
+  y: number
+}
+
 export const Contributions = () => {
   const [contributionDays, setContributionDays] = useState<ContributionDay[]>([])
   const [totalContributions, setTotalContributions] = useState<number>(0)

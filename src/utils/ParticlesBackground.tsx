@@ -5,6 +5,8 @@ import { loadAll } from "@tsparticles/all"
 export function ParticleBackground() {
   const loaded = useRef(false)
 
+  const bgColor = getComputedStyle(document.documentElement).getPropertyValue("--color-background").trim()
+
   useEffect(() => {
     if (loaded.current) return
     loaded.current = true
@@ -19,7 +21,7 @@ export function ParticleBackground() {
       id="tsparticles"
       options={{
         background: {
-          color: "var(--color-background)",
+          color: bgColor,
         },
         particles: {
           number: { value: 150 },

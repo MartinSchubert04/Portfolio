@@ -55,7 +55,7 @@ export const Carreer = () => {
                       alt="Liverpool John Moores University"
                       width="100"
                       height="100"
-                      src="/ljmu.png"
+                      src="@assets/githubIcon.svg"
                       className="size-10 sm:size-12 rounded-md"
                     />
 

@@ -8,14 +8,14 @@ const ResumeButton = () => {
       className="cursor-pointer group h-15 relative flex  items-center gap-3 px-8 p-1 mr-4 bg-opacity-0 text-[#f1f1f1]  border border-px rounded-full border-bline bg-transparent hover:bg-opacity-70  transition font-semibold shadow-md"
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24px" width="24px">
-        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+        <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
+        <g stroke-linejoin="round" strokeLinecap="round" id="SVGRepo_tracerCarrier"></g>
         <g id="SVGRepo_iconCarrier">
           <g id="Interface / Download">
             <path
               stroke-linejoin="round"
-              stroke-linecap="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeWidth="2"
               stroke="#f1f1f1"
               d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
               id="Vector"
