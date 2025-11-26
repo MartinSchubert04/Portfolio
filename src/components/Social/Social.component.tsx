@@ -33,7 +33,7 @@ export const Social = ({ link, icon }: SocialProps) => {
 export const SocialSet = () => {
   return (
     <>
-      <div className="w-max m-3 h-12 p-1 px-1.5 flex items-center gap-2 rounded-full border border-px border-bline border-(--primary-color)">
+      <div className="w-max m-3 h-12 p-1 px-1.5 flex items-center gap-2 rounded-full border border-px border-bline border-(--color-primary)">
         {socials.map((s) => (
           <Social {...s} key={s.icon} />
         ))}

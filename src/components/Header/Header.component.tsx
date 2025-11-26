@@ -9,11 +9,11 @@ const ResumeButton = () => {
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24px" width="24px">
         <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
-        <g stroke-linejoin="round" strokeLinecap="round" id="SVGRepo_tracerCarrier"></g>
+        <g strokeLinejoin="round" strokeLinecap="round" id="SVGRepo_tracerCarrier"></g>
         <g id="SVGRepo_iconCarrier">
           <g id="Interface / Download">
             <path
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               strokeLinecap="round"
               strokeWidth="2"
               stroke="#f1f1f1"

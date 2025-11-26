@@ -59,11 +59,11 @@ const RectContribution = ({ count, date, level, x, y }: RectContributionProps) =
           data-[side=top]:slide-in-from-bottom-2
           z-50 w-fit origin-(--radix-tooltip-content-transform-origin) 
           
-          rounded-md px-3 py-1.5 text-xs text-balance border boder-bline text-(--primary-color) bg-(--color-background) fill-(--color-background) font-sans"
+          rounded-md px-3 py-1.5 text-xs text-balance border boder-bline text-(--color-primary) bg-(--color-background) fill-(--color-background) font-sans"
           avoidCollisions={false}
         >
           <p className="">{tooltipText}</p>
-          <Tooltip.Arrow className="fill-(--primary-color)" />
+          <Tooltip.Arrow className="fill-(--color-primary)" />
         </Tooltip.Content>
       </Tooltip.Portal>
     </Tooltip.Root>
@@ -118,7 +118,7 @@ export const Contributions = () => {
   })
 
   return (
-    <Tooltip.Provider delayDuration={100} skipDelayDuration={10000}>
+    <Tooltip.Provider delayDuration={0} disableHoverableContent>
       <div className="px-3 w-full flex flex-col pt-8 border-l border-r  border-solid border-transparent [border-image:linear-gradient(to_bottom,#362843,transparent)_1] matsu_border_side ">
         <p className="text-manrope text-[oklch(70.5% 0.015 286.067)] dark:text-zinc-400 text-sm font-light">
           Contributions

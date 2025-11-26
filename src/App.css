@@ -18,13 +18,15 @@
 
 :root {
   --radius: 0.5rem;
+
+  --color-primary: rgb(255 255 227 / var(--tw-text-opacity));
   --color-background: hsl(0, 0%, 13%);
   --color-grey: hsl(0, 0%, 60%);
+  --color-violet: rgb(163 116 255 / var(--tw-text-opacity));
+  --color-light-violet: rgb(231 210 249);
 
   --tw-text-opacity: 1;
-  --primary-color: rgb(255 255 227 / var(--tw-text-opacity));
   --tw-text-opacity: 1;
-  --color-light-violet: rgb(231 210 249);
   --nav-space: 5rem;
   font-size: 16px;
 }
@@ -40,7 +42,7 @@ body {
 }
 
 .text-primarytext {
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 .text-violet-text {

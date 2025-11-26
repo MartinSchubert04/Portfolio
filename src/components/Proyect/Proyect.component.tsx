@@ -31,7 +31,7 @@ const Project = ({ project }: ProjectProps) => {
         <img className="h-full w-full rounded-md object-cover" src={project.imgURL} />
       </div>
       <div className="px-4 py-2 pt-0 flex flex-col gap-1">
-        <div className="font-sans text-lg font-bold text-zinc-500 dark:text-(--primary-color)  mt-2">
+        <div className="font-sans text-lg font-bold text-zinc-500 dark:text-(--color-primary)  mt-2">
           {project.name}
         </div>
         <div className="prose max-w-full mt-2 text-pretty font-sans text-md text-zinc-400 dark:prose-invert ">

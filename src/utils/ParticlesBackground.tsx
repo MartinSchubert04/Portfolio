@@ -5,8 +5,6 @@ import { loadAll } from "@tsparticles/all"
 export function ParticleBackground() {
   const loaded = useRef(false)
 
-  const bgColor = getComputedStyle(document.documentElement).getPropertyValue("--color-background").trim()
-
   useEffect(() => {
     if (loaded.current) return
     loaded.current = true
@@ -17,66 +15,65 @@ export function ParticleBackground() {
   }, [])
 
   return (
-    <Particles
-      id="tsparticles"
-      options={{
-        background: {
-          color: bgColor,
-        },
-        particles: {
-          number: { value: 150 },
-          move: { enable: true, speed: 0.5 },
-          size: {
-            value: {
-              min: 0.1,
-              max: 1.3,
+    <div style={{ backgroundColor: "var(--color-background)" }}>
+      <Particles
+        id="tsparticles"
+        options={{
+          particles: {
+            number: { value: 150 },
+            move: { enable: true, speed: 0.5 },
+            size: {
+              value: {
+                min: 0.1,
+                max: 1.3,
+              },
+            },
+            opacity: {
+              value: {
+                min: 0.1,
+                max: 1,
+              },
+              animation: {
+                enable: true,
+                speed: 1,
+                startValue: "random",
+              },
             },
           },
-          opacity: {
-            value: {
-              min: 0.1,
-              max: 1,
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "bubble",
+              },
+              resize: {
+                delay: 1,
+                enable: true,
+              },
             },
+            modes: {
+              bubble: {
+                distance: 300,
+                duration: 2,
+                opacity: 0,
+                size: 0,
+              },
+            },
+          },
+          color: { value: "#ffffff" },
+          opacity: {
+            value: 1,
             animation: {
               enable: true,
-              speed: 1,
-              startValue: "random",
+              speed: 0.5,
+              sync: false,
             },
           },
-        },
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "bubble",
-            },
-            resize: {
-              delay: 1,
-              enable: true,
-            },
-          },
-          modes: {
-            bubble: {
-              distance: 300,
-              duration: 2,
-              opacity: 0,
-              size: 0,
-            },
-          },
-        },
-        color: { value: "#ffffff" },
-        opacity: {
-          value: 1,
-          animation: {
-            enable: true,
-            speed: 0.5,
-            sync: false,
-          },
-        },
 
-        pauseOnOutsideViewport: true,
-        pauseOnBlur: true,
-      }}
-    />
+          pauseOnOutsideViewport: true,
+          pauseOnBlur: true,
+        }}
+      />
+    </div>
   )
 }
