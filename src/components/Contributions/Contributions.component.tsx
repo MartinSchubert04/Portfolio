@@ -2,7 +2,7 @@ import { githubService } from "@components/service/Github.service"
 import { useOnInit } from "@hooks/hooks"
 import { showError } from "@utils/errorHandling"
 import { useState } from "react"
-import { prepareContributionData, type ContributionDay } from "./DataFormmat"
+import { prepareContributionDataFlat, type ContributionDay } from "./DataFormmat"
 import * as Tooltip from "@radix-ui/react-tooltip"
 import { CircularProgress } from "@mui/material"
 import "./Contributions.css"
@@ -74,25 +74,30 @@ export const Contributions = () => {
   const [contributionDays, setContributionDays] = useState<ContributionDay[]>([])
   const [totalContributions, setTotalContributions] = useState<number>(0)
   const [loading, setLoading] = useState(false)
+  const currentYear = useState<number>(new Date().getFullYear())
 
   useOnInit(async () => {
     try {
       setLoading(true)
-      const weeksData = await githubService.getCommitData()
-      const formatedData = prepareContributionData(weeksData)
+      const contributionsData = await githubService.getCommitData()
 
-      // eslint-disable-next-line
-      const total = weeksData.reduce((totalWeekSum: any, week: any) => {
-        // eslint-disable-next-line
-        const weekTotal = week.contributionDays.reduce((totalDaySum: any, day: any) => {
-          return totalDaySum + day.contributionCount
-        }, 0)
+      const allContributions = contributionsData.contributions
 
-        return totalWeekSum + weekTotal
-      }, 0)
+      const today = new Date()
+      today.setHours(0, 0, 0, 0)
 
-      setContributionDays(formatedData)
-      setTotalContributions(total || 0)
+      const oneYearAgo = new Date(today)
+      oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1)
+
+      const lastYearContributions = allContributions.filter((c) => {
+        const d = new Date(c.date)
+        return d >= oneYearAgo && d <= today
+      })
+
+      lastYearContributions.sort((a, b) => new Date(a.date) - new Date(b.date))
+
+      setContributionDays(prepareContributionDataFlat(lastYearContributions))
+
       setLoading(false)
     } catch (e) {
       showError(e)
@@ -119,40 +124,40 @@ export const Contributions = () => {
               <svg className="flex items-center overflow-visible" height="117" viewBox="0 0 739 117" width="739">
                 <title>Contribution Graph</title>
                 <g className="text-primarytext fill-current">
-                  <text dominant-baseline="hanging" x="14">
+                  <text dominantBaseline="hanging" x="14">
                     Dec
                   </text>
-                  <text dominant-baseline="hanging" x="84">
+                  <text dominantBaseline="hanging" x="84">
                     Jan
                   </text>
-                  <text dominant-baseline="hanging" x="140">
+                  <text dominantBaseline="hanging" x="140">
                     Feb
                   </text>
-                  <text dominant-baseline="hanging" x="196">
+                  <text dominantBaseline="hanging" x="196">
                     Mar
                   </text>
-                  <text dominant-baseline="hanging" x="266">
+                  <text dominantBaseline="hanging" x="266">
                     Apr
                   </text>
-                  <text dominant-baseline="hanging" x="322">
+                  <text dominantBaseline="hanging" x="322">
                     May
                   </text>
-                  <text dominant-baseline="hanging" x="378">
+                  <text dominantBaseline="hanging" x="378">
                     Jun
                   </text>
-                  <text dominant-baseline="hanging" x="448">
+                  <text dominantBaseline="hanging" x="448">
                     Jul
                   </text>
-                  <text dominant-baseline="hanging" x="504">
+                  <text dominantBaseline="hanging" x="504">
                     Aug
                   </text>
-                  <text dominant-baseline="hanging" x="574">
+                  <text dominantBaseline="hanging" x="574">
                     Sep
                   </text>
-                  <text dominant-baseline="hanging" x="630">
+                  <text dominantBaseline="hanging" x="630">
                     Oct
                   </text>
-                  <text dominant-baseline="hanging" x="686">
+                  <text dominantBaseline="hanging" x="686">
                     Nov
                   </text>
                 </g>
@@ -172,7 +177,7 @@ export const Contributions = () => {
           </div>
           <div className="flex flex-wrap w-full justify-between gap-1 whitespace-nowrap sm:gap-x-4 px-2">
             <div className="text-manrope text-primarytext text-muted-foreground">
-              {totalContributions} contributions in {new Date().getFullYear()} on{" "}
+              {totalContributions} contributions in {} on{" "}
               <a
                 className="text-primarytext font-medium underline underline-offset-4"
                 href="https://github.com/MartinSchubert04"

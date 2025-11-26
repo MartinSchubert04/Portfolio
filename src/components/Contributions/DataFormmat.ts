@@ -1,54 +1,37 @@
-export interface ContributionDay {
-  date: string
-  contributionCount: number
-  color: string
-  level: number // El nivel de intensidad (0 a 4)
-  x: number
-  y: number
-}
-
 const RECT_SIZE = 14
 const INITIAL_Y_OFFSET = 22
 
-// eslint-disable-next-line
-export function prepareContributionData(weeks: any[]): ContributionDay[] {
-  const allDays: ContributionDay[] = []
+export function prepareContributionDataFlat(days) {
+  const parsed = days.map((d) => ({
+    ...d,
+    dateObj: new Date(d.date),
+  }))
 
-  weeks.forEach((week, weekIndex) => {
-    // eslint-disable-next-line
-    week.contributionDays.forEach((day: any, dayIndex: any) => {
-      const yPosition = dayIndex * RECT_SIZE + INITIAL_Y_OFFSET
+  // Ordenar por fecha ascendente
+  parsed.sort((a, b) => a.dateObj - b.dateObj)
 
-      const xPosition = weekIndex * RECT_SIZE
+  const firstDay = parsed[0].dateObj
 
-      let level: number
-      const count = day.contributionCount
+  // GitHub: semanas empiezan el domingo (getDay() === 0)
+  // si querés lunes, lo ajusto
+  const firstWeekStart = new Date(firstDay)
+  firstWeekStart.setDate(firstWeekStart.getDate() - firstWeekStart.getDay())
 
-      if (count === 0) {
-        level = 0
-      } else if (count >= 1 && count <= 5) {
-        level = 1
-      } else if (count >= 6 && count <= 12) {
-        level = 2
-      } else if (count >= 13 && count <= 25) {
-        level = 3
-      } else {
-        // count > 25
-        level = 4
-      }
-      // NOTA: Los rangos exactos de contribución para los niveles pueden variar ligeramente o ser relativos
-      // a la actividad máxima del usuario, pero esta es una buena aproximación por defecto.
+  return parsed.map((day) => {
+    const diffDays = Math.floor((day.dateObj - firstWeekStart) / (1000 * 60 * 60 * 24))
 
-      allDays.push({
-        date: day.date,
-        contributionCount: count,
-        color: day.color,
-        level: level,
-        x: xPosition,
-        y: yPosition,
-      })
-    })
+    const weekIndex = Math.floor(diffDays / 7)
+    const dayIndex = day.dateObj.getDay() // 0 = domingo
+
+    const x = weekIndex * RECT_SIZE
+    const y = dayIndex * RECT_SIZE + INITIAL_Y_OFFSET
+
+    return {
+      date: day.date,
+      contributionCount: day.count,
+      level: day.level,
+      x,
+      y,
+    }
   })
-
-  return allDays
 }
