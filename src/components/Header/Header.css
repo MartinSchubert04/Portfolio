@@ -1,0 +1,3 @@
+.button-animation:hover svg {
+  animation: bounce 1s infinite;
+}

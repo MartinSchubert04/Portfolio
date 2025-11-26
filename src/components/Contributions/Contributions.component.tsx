@@ -1,4 +1,4 @@
-import { githubService } from "@components/service/Github.service"
+import { githubService } from "@service/Github.service"
 import { useOnInit } from "@hooks/hooks"
 import { showError } from "@utils/errorHandling"
 import { useState } from "react"
