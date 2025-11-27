@@ -21,6 +21,7 @@
 
   --color-primary: rgb(255 255 227 / var(--tw-text-opacity));
   --color-background: hsl(0, 0%, 13%);
+  --color-border: hsl(0, 0%, 60%);
   --color-grey: hsl(0, 0%, 60%);
   --color-violet: rgb(163 116 255 / var(--tw-text-opacity));
   --color-light-violet: rgb(231 210 249);

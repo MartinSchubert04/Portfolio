@@ -1,6 +1,6 @@
 import { algoQuePedir } from "@assets/index"
 
-export const proyects = [
+export const projects = [
   {
     imgURL: algoQuePedir,
     name: "algoQuePedir",

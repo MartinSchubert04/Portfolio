@@ -8,7 +8,14 @@ const ResumeButton = () => {
       className="button-animation cursor-pointer group h-15 relative flex   items-center gap-3 px-8 p-1 mr-4 bg-opacity-0 text-[#f1f1f1]  border border-px rounded-full border-bline bg-transparent hover:bg-opacity-70  transition font-semibold shadow-md"
     >
       Resume
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="24px" width="24px">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        className="animation-boun"
+        viewBox="0 0 24 24"
+        height="24px"
+        width="24px"
+      >
         <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
         <g strokeLinejoin="round" strokeLinecap="round" id="SVGRepo_tracerCarrier"></g>
         <g id="SVGRepo_iconCarrier">
@@ -34,13 +41,13 @@ const ResumeButton = () => {
 export const Header = () => {
   return (
     <>
-      <div className='relative background-pattern flex justify-center items-center h-60 border-l border-r  border-solid border-transparent [border-image:linear-gradient(to_bottom,transparent,#362843)_1] after:content-[" "] after:absolute  after:bottom-0 after:w-full after:bg-linear-to-r after:from-[#362843] after:via-transparent after:to-[#362843] after:h-px matsu_border_side mastsu_border_after'>
+      <div className='relative background-pattern flex justify-center items-center h-60 border-l border-r  border-solid border-transparent [border-image:linear-gradient(to_bottom,transparent,var(--color-border))_1] after:content-[" "] after:absolute  after:bottom-0 after:w-full after:bg-linear-to-r after:from-(--color-border) after:via-transparent after:to-(--color-border) after:h-px matsu_border_side mastsu_border_after'>
         {/* <PolygonImg /> */}
       </div>
-      <div className="carreer-header px-3 pt-6 flex flex-col intro w-full  border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,#362843,transparent)_1] matsu_border_side">
+      <div className="career-header px-3 pt-6 flex flex-col intro w-full  border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,var(--color-border),transparent)_1] matsu_border_side">
         <div className="flex w-full flex-col justify-center items-center my-5">
           <h1 className="text-primarytext font-bold text-3xl sm:text-5xl ">Martin Schubert</h1>
-          <h3 className="pt-2 text-violet-text text-md sm:text-xl">• Fullstack Developer •</h3>
+          <h3 className="pt-2 text-violet-text text-md sm:text-xl">• Software Engineer •</h3>
         </div>
 
         <div className="text-sm font-bold mt-5 sm:mt-7 text-zinc-400 ">Contact with me, here are my socials</div>

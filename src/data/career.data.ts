@@ -1,6 +1,6 @@
 import { algoQuePedir, python } from "@assets/index"
 
-export const carreer = [
+export const career = [
   {
     imgURL: algoQuePedir,
     name: "DC Solutions",

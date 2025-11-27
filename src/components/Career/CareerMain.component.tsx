@@ -1,6 +1,6 @@
-import { type CarreerItermProps } from "./CarreerNav.component"
+import { type CareerItermProps } from "./CareerNav.component"
 
-export const CarreerMain = ({ carreerItem }: CarreerItermProps) => {
+export const CareerMain = ({ careerItem }: CareerItermProps) => {
   return (
     <div className="flex-1 p-6 pt-4 relative">
       <div className="absolute w-[calc(100%-64px)]" style={{ opacity: 1, transform: "none" }}>
@@ -16,7 +16,7 @@ export const CarreerMain = ({ carreerItem }: CarreerItermProps) => {
 
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
-                <h2 className="text-sm sm:text-lg font-bold text-[#e7d2f9]">{carreerItem.name}</h2>
+                <h2 className="text-sm sm:text-lg font-bold text-[#e7d2f9]">{careerItem.name}</h2>
 
                 {/* Icons */}
                 <a target="_blank" className="size-4 text-neutral-500" href="https://www.ljmu.ac.uk/">
@@ -38,13 +38,13 @@ export const CarreerMain = ({ carreerItem }: CarreerItermProps) => {
                 </a>
               </div>
 
-              <p className="text-xs sm:text-sm font-medium text-zinc-400">{carreerItem.title}</p>
+              <p className="text-xs sm:text-sm font-medium text-zinc-400">{careerItem.title}</p>
             </div>
           </div>
         </div>
 
         {/* Meta info */}
-        <div className="text-zinc-400 mt-2 sm:mt-3 font-medium text-xs sm:text-sm">{carreerItem.meta}</div>
+        <div className="text-zinc-400 mt-2 sm:mt-3 font-medium text-xs sm:text-sm">{careerItem.meta}</div>
 
         {/* Technologies */}
         <div className="overflow-hidden transition-all duration-300 ease-in-out">
@@ -55,7 +55,7 @@ export const CarreerMain = ({ carreerItem }: CarreerItermProps) => {
 
             <div className="flex flex-wrap gap-2">
               {/* tech stack */}
-              {carreerItem.techStack.map((t) => (
+              {careerItem.techStack.map((t) => (
                 <a
                   target="_blank"
                   className="inline-flex items-center text-xs sm:text-sm bg-black/5 dark:bg-[#ab66fd]/15 border border-dashed border-[#909092] dark:border-[#e7d2f9]/30 py-1 px-2 rounded-md skill-inner-shadow text-[#909092] dark:text-white"
@@ -67,7 +67,7 @@ export const CarreerMain = ({ carreerItem }: CarreerItermProps) => {
             </div>
           </div>
 
-          {carreerItem.achievements.map((a) => (
+          {careerItem.achievements.map((a) => (
             <div className="text-[#909092] flex flex-col space-y-2 text-[12px] sm:text-[15px] mt-4 font-medium">
               <p>• {a}</p>
             </div>

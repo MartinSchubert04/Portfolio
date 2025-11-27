@@ -1,4 +1,5 @@
-import { proyects } from "@data/proyects.data"
+import { Title } from "@components/SectionTitle/SectionTitle"
+import { projects } from "@data/projects.data"
 
 interface Project {
   imgURL: string
@@ -75,15 +76,15 @@ const Project = ({ project }: ProjectProps) => {
   )
 }
 
-export const ProyectSet = () => {
+export const ProjectSet = () => {
   return (
-    <div className='relative  w-full mt-10 pb-4 flex flex-col border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,transparent,transparent,transparent,#362843)_1] after:content-[" "] after:absolute  after:bottom-0 after:w-full after:bg-[linear-gradient(to_right,#362843,transparent,transparent,#362843)] after:h-px matsu_border_side_long mastsu_border_after'>
-      <p className="text-manrope px-3 text-[oklch(70.5% 0.015 286.067)] dark:text-zinc-400 text-sm font-light">
-        Featured
-      </p>
-      <p className="text-primarytext px-3 text-xl sm:text-2xl md:text-2xl lg:text-2xl font-semibold">Projects</p>
+    <div className='relative  w-full mt-10 pb-4 flex flex-col border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,transparent,transparent,transparent,var(--color-border))_1] after:content-[" "] after:absolute  after:bottom-0 after:w-full after:bg-[linear-gradient(to_right,var(--color-border),transparent,transparent,var(--color-border))] after:h-px matsu_border_side_long mastsu_border_after'>
+      <div className="px-3">
+        <Title sectionAhead="Featured" title="Projects" />
+      </div>
+
       <div className="px-3 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
-        {proyects.map((p) => (
+        {projects.map((p) => (
           <Project project={p} key={p.name} />
         ))}
       </div>

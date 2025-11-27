@@ -2,10 +2,11 @@ import "./Home.css"
 import { Nav } from "@components/Nav/Nav.component"
 import { Header } from "@components/Header/Header.component"
 import { SkillSet } from "@components/Skills/Skills.component"
-import { ProyectSet } from "@components/Proyect/Proyect.component"
-import { CarreerNav } from "@components/Carreer/CarreerNav.component"
+import { ProjectSet } from "@components/Project/Project.component"
+import { CareerNav } from "@components/Career/CareerNav.component"
 import { ParticleBackground } from "@utils/ParticlesBackground"
 import { Contributions } from "@components/Contributions/Contributions.component"
+import { Title } from "@components/SectionTitle/SectionTitle"
 
 export const Home = () => {
   return (
@@ -16,9 +17,12 @@ export const Home = () => {
 
         <div className="main-content">
           <Header />
-          <CarreerNav />
+          <div className="px-3">
+            <Title sectionAhead="So far" title="Career" />
+          </div>
+          <CareerNav />
           <SkillSet />
-          <ProyectSet />
+          <ProjectSet />
           <Contributions />
         </div>
       </section>

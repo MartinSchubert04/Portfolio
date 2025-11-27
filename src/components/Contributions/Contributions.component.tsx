@@ -6,6 +6,7 @@ import { prepareContributionDataFlat } from "./DataFormmat"
 import * as Tooltip from "@radix-ui/react-tooltip"
 import { CircularProgress } from "@mui/material"
 import "./Contributions.css"
+import { Title } from "@components/SectionTitle/SectionTitle"
 
 interface RectContributionProps {
   count: number
@@ -20,7 +21,7 @@ const RectContribution = ({ count, date, level, x, y }: RectContributionProps) =
     year: "2-digit",
     month: "2-digit",
     day: "2-digit",
-  }).format(new Date(date))
+  }).format(new Date(date + "T00:00:00"))
 
   const tooltipText = `${count} contributions on ${formattedDate}`
   return (
@@ -29,7 +30,7 @@ const RectContribution = ({ count, date, level, x, y }: RectContributionProps) =
         <g data-slot="tooltip-trigger">
           <rect
             className={`
-              data-[level="0"]:fill-muted-foreground/5 dark:data-[level="0"]:fill-[#151b23] 
+              data-[level="0"]:fill-muted-foreground/5  dark:data-[level="0"]:fill-[#151b23] 
               data-[level="1"]:fill-muted-foreground/20 dark:data-[level="1"]:fill-[#033a16] 
               data-[level="2"]:fill-muted-foreground/40 dark:data-[level="2"]:fill-[#196c2e] 
               data-[level="3"]:fill-muted-foreground/60 dark:data-[level="3"]:fill-[#2ea043] 
@@ -90,7 +91,6 @@ export const Contributions = () => {
       const contributionsData = await githubService.getCommitData()
 
       const allContributions = contributionsData.contributions
-
       setTotalContributions(contributionsData.total[currentYear])
 
       const today = new Date()
@@ -119,12 +119,10 @@ export const Contributions = () => {
 
   return (
     <Tooltip.Provider delayDuration={0} disableHoverableContent>
-      <div className="px-3 w-full flex flex-col pt-8 border-l border-r  border-solid border-transparent [border-image:linear-gradient(to_bottom,#362843,transparent)_1] matsu_border_side ">
-        <p className="text-manrope text-[oklch(70.5% 0.015 286.067)] dark:text-zinc-400 text-sm font-light">
-          Contributions
-        </p>
-        <span className="text-primarytext text-xl sm:text-2xl md:text-2xl lg:text-2xl font-bold mb-10">Github</span>
-
+      <div className="px-3 w-full flex flex-col pt-8 border-l border-r  border-solid border-transparent [border-image:linear-gradient(to_bottom,var(--color-border),transparent)_1] matsu_border_side ">
+        <div className="mb-10">
+          <Title sectionAhead="Contributions" title="Github" />
+        </div>
         {loading ? (
           <div className="loading-wheel">
             <CircularProgress color="inherit" />
@@ -187,7 +185,7 @@ export const Contributions = () => {
             </div>
             <div className="flex flex-wrap w-full justify-between gap-1 whitespace-nowrap sm:gap-x-4 px-2">
               <div className="text-manrope text-primarytext text-muted-foreground">
-                {totalContributions} contributions on {currentYear} in{" "}
+                {totalContributions} contributions in {currentYear} on{" "}
                 <a
                   className="text-primarytext font-medium underline underline-offset-4"
                   href="https://github.com/MartinSchubert04"
