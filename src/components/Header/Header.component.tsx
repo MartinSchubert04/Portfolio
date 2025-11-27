@@ -43,13 +43,13 @@ const ResumeButton = () => {
 export const Header = () => {
   return (
     <>
-      <div className='relative background-pattern flex justify-center items-center border-l border-r  border-solid border-transparent [border-image:linear-gradient(to_bottom,transparent,var(--color-border))_1] after:content-[" "] after:absolute  after:bottom-0 after:w-full after:bg-linear-to-r after:from-(--color-border) after:via-transparent after:to-(--color-border) after:h-px matsu_border_side mastsu_border_after'>
+      <div className='relative h-70 background-pattern flex justify-center items-center border-l border-r  border-solid border-transparent [border-image:linear-gradient(to_bottom,transparent,var(--color-border))_1] after:content-[" "] after:absolute  after:bottom-0 after:w-full after:bg-linear-to-r after:from-(--color-border) after:via-transparent after:to-(--color-border) after:h-px matsu_border_side mastsu_border_after'>
         <PolygonMask />
       </div>
       <div className="career-header px-3 pt-6 flex flex-col intro w-full  border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,var(--color-border),transparent)_1] matsu_border_side">
         <div className="flex w-full flex-col justify-center items-center my-5">
-          <h1 className="text-primarytext font-bold text-3xl sm:text-5xl ">Martin Schubert</h1>
-          <h3 className="pt-2 text-violet-text text-md sm:text-xl">• Software Engineer •</h3>
+          <h1 className="text-primarytext font-bold text-3xl sm:text-6xl ">Martin Schubert</h1>
+          <h3 className="pt-2 text-violet-text text-md sm:text-2xl">• Software Engineer •</h3>
         </div>
 
         <div className="text-sm font-bold mt-5 sm:mt-7 text-zinc-400 ">Contact with me, here are my socials</div>

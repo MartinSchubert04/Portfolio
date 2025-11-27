@@ -40,7 +40,7 @@ export function PolygonMask() {
   }
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", height: "" }}>
       <Particles
         id="polygon-mask"
         particlesLoaded={particlesLoaded}
@@ -147,7 +147,7 @@ export function PolygonMask() {
             url: bear,
             position: {
               x: 20,
-              y: 0,
+              y: -15,
             },
           },
         }}
