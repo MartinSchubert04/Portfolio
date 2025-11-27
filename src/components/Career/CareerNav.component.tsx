@@ -1,5 +1,6 @@
 import { career } from "@data/career.data"
 import { CareerMain } from "./CareerMain.component"
+import { useState } from "react"
 
 export interface ICareer {
   imgURL: string
@@ -19,15 +20,11 @@ export interface CareerItermProps {
   careerItem: ICareer
 }
 
-const CareerNavItem = ({ careerItem }: CareerItermProps) => {
-  const displayCareerMain = (careerItem: ICareer) => {
-    return <CareerMain careerItem={careerItem} />
-  }
-
+const CareerNavItem = ({ careerItem, onSelect }: CareerNavItemProps) => {
   return (
     <div
       className="text-manrope  relative px-2  py-3 cursor-pointer text-sm sm:text-sm font-normal blur-none text-zinc-400  transition-colors duration-300 md:w-full inline-block md:block  "
-      onClick={() => displayCareerMain(careerItem)}
+      onClick={() => onSelect(careerItem)}
     >
       {careerItem.name}
       <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-zinc-500 dark:bg-[#8a2be2] rounded-r-sm"></div>
@@ -36,7 +33,18 @@ const CareerNavItem = ({ careerItem }: CareerItermProps) => {
   )
 }
 
+interface CareerNavItemProps extends CareerItermProps {
+  onSelect: (item: ICareer) => void
+  isSelected: boolean
+}
+
 export const CareerNav = () => {
+  const [selectedCareer, setSelectedCareer] = useState<ICareer>(career[0])
+
+  const handleSelectCareer = (item: ICareer) => {
+    setSelectedCareer(item)
+  }
+
   return (
     <div
       className="relative mt-1 sm:mt-4 w-full h-auto preserve-3d min-h-[400px] perspective-[1000px]"
@@ -52,9 +60,16 @@ export const CareerNav = () => {
             <nav className="flex  relative shrink-0 w-full md:w-60 border-r border-transparent [border-image:linear-gradient(to_bottom,transparent,,#e4e4e7,#e4e4e7,transparent)_1] dark:[border-image:linear-gradient(to_bottom,transparent,var(--color-border),var(--color-border),var(--color-border),transparent)_1] py-5  md:flex-col overflow-x-auto md:overflow-y-auto whitespace-nowrap justify-start">
               {/* eslint-disable-next-line */}
               {career.map((c: any) => (
-                <CareerNavItem careerItem={c} key={c.name} />
+                <CareerNavItem
+                  careerItem={c}
+                  onSelect={handleSelectCareer}
+                  isSelected={c.name === selectedCareer.name}
+                  key={c.name}
+                />
               ))}
             </nav>
+
+            <CareerMain careerItem={selectedCareer} />
           </div>
         </section>
       </div>

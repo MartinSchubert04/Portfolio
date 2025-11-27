@@ -7,10 +7,10 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
         <div className="flex flex-col gap-2 md:flex-row md:justify-between">
           <div className="flex items-center gap-4">
             <img
-              alt="Liverpool John Moores University"
+              alt={careerItem.name}
               width="100"
               height="100"
-              src="@assets/githubIcon.svg"
+              src={careerItem.imgURL}
               className="size-10 sm:size-12 rounded-md"
             />
 
@@ -19,21 +19,29 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
                 <h2 className="text-sm sm:text-lg font-bold text-[#e7d2f9]">{careerItem.name}</h2>
 
                 {/* Icons */}
-                <a target="_blank" className="size-4 text-neutral-500" href="https://www.ljmu.ac.uk/">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M128,24h0A104,104,0,1,0,232,128,..."></path>
-                  </svg>
-                </a>
 
+                {/* 
                 <a target="_blank" className="size-4 text-neutral-500" href="https://x.com/LJMU">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M214.75,211.71l-62.6-98.38,..."></path>
                   </svg>
-                </a>
-
-                <a target="_blank" className="size-4 text-neutral-500" href="https://www.linkedin.com/school/ljmu">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M216,24H40A16,16,..."></path>
+                </a> */}
+                <a target="_blank" href={careerItem.webLink}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    className="lucide lucide-globe size-3"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
                   </svg>
                 </a>
               </div>

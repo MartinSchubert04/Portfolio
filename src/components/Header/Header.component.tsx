@@ -1,13 +1,15 @@
 import { SocialSet } from "@components/Social/Social.component"
 import "./Header.css"
 import { PolygonMask } from "@utils/PolygonImage"
+import { resume } from "@assets/index"
 
 const ResumeButton = () => {
   return (
     <a
-      href="@assets/MartinSchubert.pdf"
-      download="@assets/MartinSchubert.pdf"
-      className="button-animation cursor-pointer group h-15 relative flex   items-center gap-3 px-8 p-1 mr-4 bg-opacity-0 text-[#f1f1f1]  border border-px rounded-full border-bline bg-transparent hover:bg-opacity-70  transition font-semibold shadow-md"
+      target="_blank"
+      href={resume}
+      download="MartinSchubert.pdf"
+      className="button-animation cursor-pointer group h-12 relative flex   items-center gap-3 px-8 p-1 mr-4 bg-opacity-0 text-[#f1f1f1]  border border-px rounded-full border-bline bg-transparent hover:bg-opacity-70  transition font-semibold shadow-md"
     >
       Resume
       <svg
@@ -33,7 +35,7 @@ const ResumeButton = () => {
           </g>
         </g>
       </svg>
-      <div className="absolute opacity-0 -bottom-3/4 rounded-md py-2 px-2 bg-transparent  left-1/2 -translate-x-1/2 group-hover:opacity-100 transition-opacity ">
+      <div className="absolute opacity-0 -bottom-4/4 rounded-md py-2 px-2 bg-transparent  left-1/2 -translate-x-1/2 group-hover:opacity-100 transition-opacity ">
         Download
       </div>
     </a>

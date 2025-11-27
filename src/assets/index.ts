@@ -16,10 +16,14 @@ import springboot from "./icons/spring-boot.svg"
 import git from "./icons/git.svg"
 import algoQuePedir from "./images/algoQuePedir.png"
 import bear from "./images/bear.svg"
+import resume from "./MartinSchubert.pdf"
+import cpp from "./icons/cpp.svg"
+import c from "./icons/c.svg"
 
 export {
   moon,
   speakerSlash,
+  resume,
   speaker,
   github,
   linkedin,
@@ -36,4 +40,6 @@ export {
   git,
   algoQuePedir,
   bear,
+  c,
+  cpp,
 }
