@@ -150,6 +150,63 @@ export function PolygonMask() {
               y: -15,
             },
           },
+
+          responsive: [
+            {
+              maxWidth: 700,
+              options: {
+                polygon: {
+                  scale: 0.5, // 2. Centrar la posición para evitar que se salga del borde en pantallas pequeñas
+                  position: {
+                    x: 20, // Mover al 50% del ancho (centrado)
+                    y: -10, // Mover al 50% de la altura (centrado)
+                  },
+                  move: {
+                    radius: 1,
+                    type: "path",
+                  },
+                },
+                particles: {
+                  number: {
+                    value: 150,
+                  },
+                  color: {
+                    value: "#ffffff",
+                  },
+                  move: {
+                    enable: true,
+                    speed: 0.1,
+                    direction: "none",
+                    outModes: "bounce", // default
+                  },
+                  opacity: {
+                    value: {
+                      min: 0.05,
+                      max: 0.4,
+                    },
+                    animation: {
+                      enable: true,
+                      speed: 1,
+                      sync: false,
+                    },
+                  },
+                  links: {
+                    distance: 13, // Corta distancia para efecto de "malla"
+                    enable: true,
+                    opacity: 0.4,
+                    width: 1,
+                  },
+                  shape: {
+                    type: "circle",
+                  },
+                  size: {
+                    value: 1,
+                  },
+                  // ZIndex default 0 (correcto)
+                },
+              },
+            },
+          ],
         }}
       />
     </div>
