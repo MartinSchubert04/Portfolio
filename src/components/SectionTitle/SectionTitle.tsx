@@ -1,4 +1,9 @@
-export const Title = ({ sectionAhead, title }: any) => {
+interface TitleProps {
+  sectionAhead: string
+  title: string
+}
+
+export const Title = ({ sectionAhead, title }: TitleProps) => {
   return (
     <>
       <p className="text-manrope text-[oklch(70.5% 0.015 286.067)] dark:text-zinc-400 text-sm font-light">

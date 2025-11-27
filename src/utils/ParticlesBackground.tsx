@@ -1,18 +1,19 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadAll } from "@tsparticles/all"
+import { useOnInit } from "@hooks/hooks"
 
 export function ParticleBackground() {
   const loaded = useRef(false)
 
-  useEffect(() => {
+  useOnInit(() => {
     if (loaded.current) return
     loaded.current = true
 
     initParticlesEngine(async (engine) => {
       await loadAll(engine) // carga plugins, shapes, presets, etc
     })
-  }, [])
+  })
 
   return (
     <div style={{ backgroundColor: "var(--color-background)" }}>

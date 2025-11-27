@@ -15,6 +15,7 @@ import numpy from "./icons/numpy.svg"
 import springboot from "./icons/spring-boot.svg"
 import git from "./icons/git.svg"
 import algoQuePedir from "./images/algoQuePedir.png"
+import bear from "./images/bear.svg"
 
 export {
   moon,
@@ -34,4 +35,5 @@ export {
   springboot,
   git,
   algoQuePedir,
+  bear,
 }
