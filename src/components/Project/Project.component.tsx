@@ -19,7 +19,7 @@ interface IProjectProps {
 
 const ProjectTech = ({ nombre }: IProjectProps) => {
   return (
-    <div className="inline-flex items-center rounded-sm  font-semibold  bg-[#b06dff]/25  text-[#e7d2f9]  px-1 py-0 text-[11px] skill-m">
+    <div className="inline-flex items-center rounded-sm  font-semibold  bg-(--color-background-card-item)/25  text-(--color-text-item)  px-1 py-0 text-[11px] skill-m">
       {nombre}
     </div>
   )
@@ -27,7 +27,7 @@ const ProjectTech = ({ nombre }: IProjectProps) => {
 
 const Project = ({ project }: ProjectProps) => {
   return (
-    <div className=" rounded-lg  bg-[#06030a] text-card-foreground shadow  shadow-[#4d4d4d] flex flex-col  card-border bg-card-m min-h-[400px]">
+    <div className=" rounded-lg  bg-(--color-background-card) text-card-foreground  shadow-(--color-border-shadow) flex flex-col  card-border bg-card-m min-h-[400px]">
       <div className="flex w-full max-h-48 min-h-48 rounded-t-lg flex-col space-y-1.5  pb-2 skeleton relative p-3 gradient-custom">
         <img className="h-full w-full rounded-md object-cover" src={project.imgURL} />
       </div>
@@ -50,7 +50,7 @@ const Project = ({ project }: ProjectProps) => {
 
         <div className="flex flex-row flex-wrap items-start gap-1 ">
           <a target="_blank" href={project.sourceLink}>
-            <div className="items-center rounded-sm font-semibold transition-colors focus:outline-none bg-transparent  text-[#909097] dark:text-[#e7d2f9]   flex gap-2 px-2 py-2 text-[12px]  ">
+            <div className="items-center rounded-sm font-semibold transition-colors focus:outline-none bg-transparent  text-(--color-text-item)   flex gap-2 px-2 py-2 text-[12px]  ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

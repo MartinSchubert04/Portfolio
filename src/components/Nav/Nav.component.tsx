@@ -53,11 +53,11 @@ export const Nav = () => {
   return (
     <div
       className="nav-container fixed p-4 flex z-10 w-full justify-center 
-      bg-linear-to-b from-(--color-nav-gradient-1)/90 via-(--color-nav-gradient-1)  /80 to-transparent  
-      backdrop-blur-sm border-b border-transparent [border-image:linear-gradient(to_right,transparent,(--color-border-secondary),(--color-border-secondary),transparent)_1] "
+      bg-linear-to-b from-(--color-nav-gradient)/90 via-(--color-nav-gradient)  /80 to-transparent  
+      backdrop-blur-sm border-b border-transparent [border-image:linear-gradient(to_right,transparent,var(--color-border-secondary),var(--color-border-secondary),transparent)_1] "
     >
       <nav className="nav ">
-        <button className="theme-button" onClick={toggleTheme}>
+        <button className="theme-button bg-(--color-background-item" onClick={toggleTheme}>
           <img src={themeIcon} className="moon-icon" />
           <audio ref={clickRef} src={clickSound} />
         </button>

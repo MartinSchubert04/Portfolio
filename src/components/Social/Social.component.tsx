@@ -13,7 +13,7 @@ export const Social = ({ link, icon }: SocialProps) => {
         <div className="absolute w-12 h-12 rounded-full bg-(--color-primary) opacity-0 group-hover:opacity-40 transition duration-500"></div>
         <div
           className="flex aspect-square cursor-pointer items-center justify-center rounded-full bg-neutral-400/40"
-          style={{ width: "40px", zIndex: "1000" }}
+          style={{ width: "40px", zIndex: "100" }}
         >
           <a
             href={link}
