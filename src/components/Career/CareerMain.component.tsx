@@ -34,9 +34,9 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="lucide lucide-globe size-3"
                   >
                     <circle cx="12" cy="12" r="10"></circle>
@@ -63,8 +63,9 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
 
             <div className="flex flex-wrap gap-2">
               {/* tech stack */}
-              {careerItem.techStack.map((t) => (
+              {careerItem.techStack.map((t, i: number) => (
                 <a
+                  key={i}
                   target="_blank"
                   className="inline-flex items-center text-xs sm:text-sm bg-black/5 dark:bg-[#ab66fd]/15 border border-dashed border-[#909092] dark:border-[#e7d2f9]/30 py-1 px-2 rounded-md skill-inner-shadow text-[#909092] dark:text-white"
                   href={t.link}
@@ -75,8 +76,8 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
             </div>
           </div>
 
-          {careerItem.achievements.map((a) => (
-            <div className="text-[#909092] flex flex-col space-y-2 text-[12px] sm:text-[15px] mt-4 font-medium">
+          {careerItem.achievements.map((a, i: number) => (
+            <div key={i} className="text-[#909092] flex flex-col space-y-2 text-[12px] sm:text-[15px] mt-4 font-medium">
               <p>• {a}</p>
             </div>
           ))}

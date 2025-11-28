@@ -59,12 +59,12 @@ export const CareerNav = () => {
             {/* NAV */}
             <nav className="flex  relative shrink-0 w-full md:w-60 border-r border-transparent [border-image:linear-gradient(to_bottom,transparent,,#e4e4e7,#e4e4e7,transparent)_1] dark:[border-image:linear-gradient(to_bottom,transparent,var(--color-border),var(--color-border),var(--color-border),transparent)_1] py-5  md:flex-col overflow-x-auto md:overflow-y-auto whitespace-nowrap justify-start">
               {/* eslint-disable-next-line */}
-              {career.map((c: any) => (
+              {career.map((c: any, i: number) => (
                 <CareerNavItem
                   careerItem={c}
                   onSelect={handleSelectCareer}
                   isSelected={c.name === selectedCareer.name}
-                  key={c.name}
+                  key={i}
                 />
               ))}
             </nav>
