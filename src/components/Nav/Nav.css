@@ -21,6 +21,10 @@
   width: 3rem;
   height: 3rem;
 }
+.theme-button:hover,
+.speaker-button:hover {
+  background-color: var(--color-hover-button);
+}
 
 .speaker-button {
   width: 3rem;

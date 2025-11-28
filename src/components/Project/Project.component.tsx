@@ -1,5 +1,6 @@
 import { Title } from "@components/SectionTitle/SectionTitle"
 import { projects } from "@data/projects.data"
+import { Github } from "@utils/icons"
 
 interface Project {
   imgURL: string
@@ -70,6 +71,16 @@ const Project = ({ project }: ProjectProps) => {
               Website
             </div>
           </a>
+          {project.sourceLink ? (
+            <a target="_blank" href={project.sourceLink}>
+              <div className="items-center rounded-sm font-semibold transition-colors focus:outline-none bg-transparent  text-(--color-text-item)   flex gap-2 px-2 py-2 text-[12px]  ">
+                <Github fillColor="var(--color-text-item)" />
+                Source
+              </div>
+            </a>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

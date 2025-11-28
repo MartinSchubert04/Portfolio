@@ -57,7 +57,7 @@ export const Nav = () => {
       backdrop-blur-sm border-b border-transparent [border-image:linear-gradient(to_right,transparent,var(--color-border-secondary),var(--color-border-secondary),transparent)_1] "
     >
       <nav className="nav ">
-        <button className="theme-button bg-(--color-background-item" onClick={toggleTheme}>
+        <button className="theme-button" onClick={toggleTheme}>
           <img src={themeIcon} className="moon-icon" />
           <audio ref={clickRef} src={clickSound} />
         </button>

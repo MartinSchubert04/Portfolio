@@ -21,6 +21,7 @@
 
   --color-primary: rgb(255 255 227 / var(--tw-text-opacity));
   --color-text-item: #e7d2f9;
+  --color-hover-button: #362843;
 
   --color-background: hsl(0, 0%, 13%);
   --color-background-item: #ab66fd;
@@ -36,6 +37,8 @@
 
   --color-nav-gradient: #06030a;
 
+  --color-icon: rgb(163 116 255 / var(--tw-text-opacity));
+
   --tw-text-opacity: 1;
   --tw-text-opacity: 1;
   --nav-space: 5rem;
@@ -45,6 +48,7 @@
 .light {
   --color-primary: #3f3f46;
   --color-text-item: #909092;
+  --color-hover-button: oklch(96.7% 0.001 286.375);
 
   --color-background: #fff;
   --color-background-item: #5f5e5e;
