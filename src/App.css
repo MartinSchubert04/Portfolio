@@ -20,16 +20,40 @@
   --radius: 0.5rem;
 
   --color-primary: rgb(255 255 227 / var(--tw-text-opacity));
+
   --color-background: hsl(0, 0%, 13%);
-  --color-border: hsl(0, 0%, 60%);
+  --color-background-violet: #ab66fd;
+
+  --color-border: #909092;
+  --color-border-shadow: #e7d2f9;
+  --color-border-secondary: #362843;
+
   --color-grey: hsl(0, 0%, 60%);
   --color-violet: rgb(163 116 255 / var(--tw-text-opacity));
   --color-light-violet: rgb(231 210 249);
+
+  --color-nav-gradient-1: #06030a;
+  --color-nav-gradient-2: #06030a;
 
   --tw-text-opacity: 1;
   --tw-text-opacity: 1;
   --nav-space: 5rem;
   font-size: 16px;
+}
+
+.light {
+  --color-primary: rgb(255 255 227 / var(--tw-text-opacity));
+  --color-background: #fff;
+  --color-border: hsl(0, 0%, 60%);
+  --color-border-secondary: #e4e4e7;
+  --color-grey: hsl(0, 0%, 60%);
+
+  --color-background-violet: #ab66fd;
+
+  --color-light-violet: rgb(231 210 249);
+
+  --color-nav-gradient-1: #fff;
+  --color-nav-gradient-2: #fff;
 }
 
 * {

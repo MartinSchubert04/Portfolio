@@ -1,4 +1,5 @@
 import moon from "./icons/moon.svg"
+import sun from "./icons/sun.svg"
 import speakerSlash from "./icons/speaker-slash.svg"
 import speaker from "./icons/speaker-high.svg"
 import github from "./icons/github.svg"
@@ -19,9 +20,12 @@ import bear from "./images/bear.svg"
 import resume from "./MartinSchubert.pdf"
 import cpp from "./icons/cpp.svg"
 import c from "./icons/c.svg"
+import backgroundMusic from "./audio/backgroundMusic.mp3"
+import clickSound from "./audio/click.wav"
 
 export {
   moon,
+  sun,
   speakerSlash,
   resume,
   speaker,
@@ -42,4 +46,6 @@ export {
   bear,
   c,
   cpp,
+  backgroundMusic,
+  clickSound,
 }

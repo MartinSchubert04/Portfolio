@@ -16,3 +16,13 @@
   height: var(--nav-space);
   width: 100vw;
 }
+
+.theme-button {
+  width: 3rem;
+  height: 3rem;
+}
+
+.speaker-button {
+  width: 3rem;
+  height: 3rem;
+}

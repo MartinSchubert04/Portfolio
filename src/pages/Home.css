@@ -23,18 +23,6 @@
   background-color: var(--color-background);
 }
 
-.theme-button {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.5rem;
-}
-
-.speaker-button {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.5rem;
-}
-
 button {
   display: flex;
   justify-content: center;
@@ -45,7 +33,7 @@ button {
 }
 
 button:hover {
-  background-color: #362843;
+  background-color: var(--color-background);
 }
 
 .moon-icon {

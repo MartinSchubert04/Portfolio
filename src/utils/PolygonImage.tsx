@@ -4,7 +4,7 @@ import { loadAll } from "@tsparticles/all"
 import { useOnInit } from "@hooks/hooks"
 import { bear } from "@assets/index"
 
-const DELAY_TIME = 500
+const DELAY_TIME = 50
 
 export function PolygonMask() {
   const loaded = useRef(false)
@@ -40,19 +40,12 @@ export function PolygonMask() {
   }
 
   return (
-    <div style={{ width: "100%", height: "" }}>
+    <div style={{ width: "100%" }}>
       <Particles
         id="polygon-mask"
         particlesLoaded={particlesLoaded}
         options={{
           autoPlay: false,
-
-          background: {
-            color: {
-              value: "#212121", // Fondo oscuro (casi negro)
-            },
-            opacity: 1,
-          },
 
           // Mantener fullScreen en false para que ocupe el contenedor (esto es correcto)
           fullScreen: {
