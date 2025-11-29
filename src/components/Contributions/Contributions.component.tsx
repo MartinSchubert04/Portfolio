@@ -30,11 +30,11 @@ const RectContribution = ({ count, date, level, x, y }: RectContributionProps) =
         <g data-slot="tooltip-trigger">
           <rect
             className={`
-              data-[level="0"]:fill-muted-foreground/5  dark:data-[level="0"]:fill-[#151b23] 
-              data-[level="1"]:fill-muted-foreground/20 dark:data-[level="1"]:fill-[#033a16] 
-              data-[level="2"]:fill-muted-foreground/40 dark:data-[level="2"]:fill-[#196c2e] 
-              data-[level="3"]:fill-muted-foreground/60 dark:data-[level="3"]:fill-[#2ea043] 
-              data-[level="4"]:fill-muted-foreground/80 dark:data-[level="4"]:fill-[#56d364]
+              data-[level="0"]:fill-muted-foreground/5  dark:data-[level="0"]:fill-(--color-contribution-level0)
+              data-[level="1"]:fill-muted-foreground/20 dark:data-[level="1"]:fill-(--color-contribution-level1) 
+              data-[level="2"]:fill-muted-foreground/40 dark:data-[level="2"]:fill-(--color-contribution-level2) 
+              data-[level="3"]:fill-muted-foreground/60 dark:data-[level="3"]:fill-(--color-contribution-level3) 
+              data-[level="4"]:fill-muted-foreground/80 dark:data-[level="4"]:fill-(--color-contribution-level4)
             `}
             data-count={count}
             data-date={date}
@@ -200,7 +200,7 @@ export const Contributions = () => {
                 <span className="text-primarytext mr-1 text-muted-foreground">Less</span>
                 <svg height="11" width="11">
                   <rect
-                    className={`fill-muted-foreground/5 dark:fill-[#151b23] `}
+                    className={`fill-muted-foreground/5 dark:fill-(--color-contribution-level0) `}
                     height="11"
                     rx="2"
                     ry="2"
@@ -209,7 +209,7 @@ export const Contributions = () => {
                 </svg>
                 <svg height="11" width="11">
                   <rect
-                    className={`fill-muted-foreground/5 dark:fill-[#033a16]`}
+                    className={`fill-muted-foreground/5 dark:fill-(--color-contribution-level1)`}
                     height="11"
                     rx="2"
                     ry="2"
@@ -218,7 +218,7 @@ export const Contributions = () => {
                 </svg>
                 <svg height="11" width="11">
                   <rect
-                    className={`fill-muted-foreground/5 dark:fill-[#196c2e]`}
+                    className={`fill-muted-foreground/5 dark:fill-(--color-contribution-level2)`}
                     height="11"
                     rx="2"
                     ry="2"
@@ -227,7 +227,7 @@ export const Contributions = () => {
                 </svg>
                 <svg height="11" width="11">
                   <rect
-                    className={`fill-muted-foreground/5 dark:fill-[#2ea043]`}
+                    className={`fill-muted-foreground/5 dark:fill-(--color-contribution-level3)`}
                     height="11"
                     rx="2"
                     ry="2"
@@ -236,7 +236,7 @@ export const Contributions = () => {
                 </svg>
                 <svg height="11" width="11">
                   <rect
-                    className={`fill-muted-foreground/5 dark:fill-[#56d364]`}
+                    className={`fill-muted-foreground/5 dark:fill-(--color-contribution-level4)`}
                     height="11"
                     rx="2"
                     ry="2"

@@ -39,6 +39,12 @@
 
   --color-icon: rgb(163 116 255 / var(--tw-text-opacity));
 
+  --color-contribution-level0: #151b23;
+  --color-contribution-level1: #033a16;
+  --color-contribution-level2: #196c2e;
+  --color-contribution-level3: #2ea043;
+  --color-contribution-level4: #56d364;
+
   --tw-text-opacity: 1;
   --tw-text-opacity: 1;
   --nav-space: 5rem;
@@ -61,6 +67,12 @@
   --color-grey: hsl(0, 0%, 60%);
 
   --color-light-violet: rgb(231 210 249);
+
+  --color-contribution-level0: hsl(217.9 10.6% 64.9% / 0.1);
+  --color-contribution-level1: hsl(217.9 10.6% 64.9% / 0.2);
+  --color-contribution-level2: hsl(217.9 10.6% 64.9% / 0.4);
+  --color-contribution-level3: hsl(217.9 10.6% 64.9% / 0.6);
+  --color-contribution-level4: hsl(217.9 10.6% 64.9% / 0.8);
 
   --color-nav-gradient: #fff;
   --color-nav-gradient: #fff;

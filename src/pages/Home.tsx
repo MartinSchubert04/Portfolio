@@ -17,7 +17,7 @@ export const Home = () => {
 
         <div className="main-content">
           <Header />
-          <div className="px-3">
+          <div className="px-3 mt-6">
             <Title sectionAhead="So far" title="Career" />
           </div>
           <CareerNav />

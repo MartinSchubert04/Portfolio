@@ -22,6 +22,8 @@ import cpp from "./icons/cpp.svg"
 import c from "./icons/c.svg"
 import backgroundMusic from "./audio/backgroundMusic.mp3"
 import clickSound from "./audio/click.wav"
+import mail from "./icons/mail.svg"
+import copy from "./icons/copy.svg"
 
 export {
   moon,
@@ -48,4 +50,6 @@ export {
   cpp,
   backgroundMusic,
   clickSound,
+  mail,
+  copy,
 }

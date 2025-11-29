@@ -9,7 +9,7 @@ const ResumeButton = () => {
       target="_blank"
       href={resume}
       download="MartinSchubert.pdf"
-      className="button-animation cursor-pointer group h-12 relative flex   items-center gap-3 px-8 p-1 mr-4 bg-opacity-0 text-[#f1f1f1]  border border-px rounded-full border-bline bg-transparent hover:bg-opacity-70  transition font-semibold shadow-md"
+      className="button-animation cursor-pointer group h-12 relative flex   items-center gap-3 px-8 p-1 mr-4 bg-opacity-0 text-(--color-primary)  border border-px rounded-full border-bline bg-transparent hover:bg-opacity-70  transition font-semibold shadow-md"
     >
       Resume
       <svg
@@ -28,14 +28,14 @@ const ResumeButton = () => {
               strokeLinejoin="round"
               strokeLinecap="round"
               strokeWidth="2"
-              stroke="#f1f1f1"
+              stroke="var(--color-primary)"
               d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
               id="Vector"
             ></path>
           </g>
         </g>
       </svg>
-      <div className="absolute opacity-0 -bottom-4/4 rounded-md py-2 px-2 bg-transparent  left-1/2 -translate-x-1/2 group-hover:opacity-100 transition-opacity ">
+      <div className="absolute opacity-0 -bottom-4/4 rounded-md py-2 px-2 bg-transparent  left-1/2 -translate-x-1/2 group-hover:opacity-100 transition-opacity  text-(--color-primary)">
         Download
       </div>
     </a>
