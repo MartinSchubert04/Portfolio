@@ -1,7 +1,6 @@
 import { career } from "@data/career.data"
 import { CareerMain } from "./CareerMain.component"
 import { useState } from "react"
-import "./Career.css"
 
 export interface ICareer {
   imgURL: string
@@ -21,29 +20,39 @@ export interface CareerItermProps {
   careerItem: ICareer
 }
 
-const CareerNavItem = ({ careerItem, onSelect }: CareerNavItemProps) => {
+interface CareerNavItemProps extends CareerItermProps {
+  onSelect: (index: number) => void
+  isSelected: boolean
+  index: number
+}
+
+const CareerNavItem = ({ careerItem, onSelect, isSelected, index }: CareerNavItemProps) => {
   return (
     <div
-      className="background-fade text-manrope  relative px-2  py-3 cursor-pointer text-sm sm:text-sm font-normal blur-none text-zinc-400  transition-colors duration-300 md:w-full inline-block md:block  "
-      onClick={() => onSelect(careerItem)}
+      className="text-manrope text-primarytext  relative px-2  py-3 cursor-pointer text-sm sm:text-sm font-normal blur-none
+      before:absolute before:inset-0 before:bg-(--color-background-item)/15 before:opacity-0
+      before:transition-opacity before:duration-300
+      hover:before:opacity-100
+      transition-colors duration-300 md:w-full inline-block md:block  "
+      onClick={() => onSelect(index)}
     >
       {careerItem.name}
-      <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-zinc-500 dark:bg-[#8a2be2] rounded-r-sm"></div>
-      <div className="md:hidden absolute bottom-0 left-0 right-0 h-[3px] bg-zinc-500 dark:bg-[#8a2be2] rounded-t-sm"></div>
+      <div
+        className={`hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-(--color-navCareer-stick) rounded-r-sm ${
+          isSelected ? "opacity-100" : "opacity-0"
+        }`}
+      ></div>
     </div>
   )
 }
 
-interface CareerNavItemProps extends CareerItermProps {
-  onSelect: (item: ICareer) => void
-  isSelected: boolean
-}
-
 export const CareerNav = () => {
   const [selectedCareer, setSelectedCareer] = useState<ICareer>(career[0])
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const handleSelectCareer = (item: ICareer) => {
-    setSelectedCareer(item)
+  const handleSelectCareer = (index: number) => {
+    setSelectedIndex(index)
+    setSelectedCareer(career[index])
   }
 
   return (
@@ -59,15 +68,25 @@ export const CareerNav = () => {
           <div className="flex flex-col md:flex-row max-w-6xl w-full mx-auto bg-transparent rounded-lg overflow-hidden min-h-[400px]">
             {/* NAV */}
             <nav className="flex  relative shrink-0 w-full md:w-60 border-r border-transparent [border-image:linear-gradient(to_bottom,transparent,,#e4e4e7,#e4e4e7,transparent)_1] dark:[border-image:linear-gradient(to_bottom,transparent,var(--color-border),var(--color-border),var(--color-border),transparent)_1] py-5  md:flex-col overflow-x-auto md:overflow-y-auto whitespace-nowrap justify-start">
-              {/* eslint-disable-next-line */}
-              {career.map((c: any, i: number) => (
+              {career.map((c: ICareer, i: number) => (
                 <CareerNavItem
                   careerItem={c}
+                  index={i}
                   onSelect={handleSelectCareer}
-                  isSelected={c.name === selectedCareer.name}
+                  isSelected={i === selectedIndex}
                   key={i}
                 />
               ))}
+              <div
+                className="
+                      hidden md:block absolute left-0 w-1 bg-[--color-navCareer-stick] rounded-r-sm 
+                      transition-transform duration-300
+                    "
+                style={{
+                  height: "48px", // el alto de cada item
+                  transform: `translateY(${selectedIndex * 48}px)`,
+                }}
+              />
             </nav>
 
             <CareerMain careerItem={selectedCareer} />

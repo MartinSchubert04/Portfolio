@@ -26,6 +26,10 @@ import backgroundMusic from "./audio/backgroundMusic.mp3"
 import clickSound from "./audio/click.wav"
 import mail from "./icons/mail.svg"
 import copy from "./icons/copy.svg"
+import signpoint from "./images/signpoint.png"
+import breakout from "./images/breakOut.png"
+import dcs from "./images/dcs.png"
+import unsam from "./images/unsam.png"
 
 export {
   moon,
@@ -49,6 +53,7 @@ export {
   springboot,
   git,
   algoQuePedir,
+  signpoint,
   bear,
   c,
   cpp,
@@ -56,4 +61,7 @@ export {
   clickSound,
   mail,
   copy,
+  breakout,
+  dcs,
+  unsam,
 }

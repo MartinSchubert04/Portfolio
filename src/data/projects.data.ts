@@ -1,25 +1,28 @@
-import { algoQuePedir } from "@assets/index"
+import { algoQuePedir, signpoint, breakout } from "@assets/index"
 
 export const projects = [
   {
     imgURL: algoQuePedir,
-    name: "algoQuePedir",
-    description: "Tp de algo 3",
-    sourceLink: "https://google.com",
-    techStack: ["Svelte", "React", "Kotlin", "Spring Boot", "HTML", "CSS"],
+    name: "Algo que pedir",
+    description: "Food delivery app",
+    sourceLink: "https://github.com/MartinSchubert04/algoQuePedir-client",
+    webLink: "",
+    techStack: ["Svelte", "React", "TypeScript", "Kotlin", "Spring Boot", "HTML", "CSS"],
   },
   {
-    imgURL: algoQuePedir,
-    name: "Assembly Game",
-    description: "Tp de SPD",
-    sourceLink: "https://google.com",
-    techStack: ["Assembly"],
-  },
-  {
-    imgURL: algoQuePedir,
+    imgURL: signpoint,
     name: "Signpoint",
     description: "Automated Outlook signs",
-    sourceLink: "https://google.com",
-    techStack: ["React", "Python"],
+    sourceLink: "https://github.com/MartinSchubert04/algoQuePedir-client",
+    webLink: "",
+    techStack: ["React", "TypeScript", "Python"],
+  },
+  {
+    imgURL: breakout,
+    name: "Breakout",
+    description: "Game made in assembly",
+    sourceLink: "https://github.com/MartinSchubert04/algoQuePedir-client",
+    webLink: "",
+    techStack: ["Assembly"],
   },
 ]

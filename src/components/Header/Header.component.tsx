@@ -55,7 +55,7 @@ export const Header = () => {
         </div>
 
         <div className="text-sm font-bold mt-5 sm:mt-7 text-zinc-400 ">Contact with me, here are my socials</div>
-        <div className="flex w-full justify-between items-center mt-2">
+        <div className="flex w-full justify-between flex-wrap items-center mt-2">
           <SocialSet />
           <ResumeButton />
         </div>

@@ -1,21 +1,3 @@
-::-webkit-scrollbar {
-  width: 5px;
-  height: 0px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
-
 :root {
   --radius: 0.5rem;
 
@@ -37,6 +19,8 @@
   --color-light-violet: rgb(231 210 249);
 
   --color-nav-gradient: #06030a;
+
+  --color-navCareer-stick: rgb(163 116 255);
 
   --color-icon: rgb(163 116 255 / var(--tw-text-opacity));
 
@@ -71,6 +55,7 @@
   --color-grey: hsl(0, 0%, 60%);
 
   --color-light-violet: rgb(231 210 249);
+  --color-navCareer-stick: hsl(217.9 10.6% 64.9% / 0.4);
 
   --color-contribution-level0: hsl(217.9 10.6% 64.9% / 0.1);
   --color-contribution-level1: hsl(217.9 10.6% 64.9% / 0.2);
@@ -86,6 +71,7 @@
 
 * {
   font-family: "Manrope-Bold", sans-serif;
+  scrollbar-width: none;
 }
 
 body {
