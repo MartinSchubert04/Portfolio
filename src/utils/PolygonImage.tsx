@@ -1,14 +1,33 @@
-import { useRef, useCallback, useState } from "react"
+import { useRef, useCallback, useState, useEffect } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadAll } from "@tsparticles/all"
 import { useOnInit } from "@hooks/hooks"
 import { bear } from "@assets/index"
+import { colors } from "@mui/material"
 
 const DELAY_TIME = 50
 
 export function PolygonMask() {
   const loaded = useRef(false)
   const [isLibraryReady, setIsLibraryReady] = useState(false)
+  const [particleColor, setParticleColor] = useState("#3f3f46")
+
+  useEffect(() => {
+    const updateColor = () => {
+      const color = getComputedStyle(document.documentElement).getPropertyValue("--color-particles").trim() || "#ffffff"
+      setParticleColor(color)
+    }
+
+    updateColor()
+
+    const observer = new MutationObserver(updateColor)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme", "class"],
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   useOnInit(() => {
     if (loaded.current) return
@@ -23,12 +42,9 @@ export function PolygonMask() {
   // eslint-disable-next-line
   const particlesLoaded = useCallback(async (container: any) => {
     if (container) {
-      // 1. Inicia el motor en pausa (si autoPlay: false)
       container.pause()
 
-      // 2. Espera el tiempo de retraso
       setTimeout(() => {
-        // 3. ¡Arranca las partículas!
         container.play()
       }, DELAY_TIME)
     }
@@ -81,7 +97,7 @@ export function PolygonMask() {
               value: 300,
             },
             color: {
-              value: "#ffffff",
+              value: particleColor,
             },
             move: {
               enable: true,
@@ -105,6 +121,9 @@ export function PolygonMask() {
               enable: true,
               opacity: 0.4,
               width: 1,
+              color: {
+                value: particleColor,
+              },
             },
             shape: {
               type: "circle",
@@ -121,7 +140,7 @@ export function PolygonMask() {
               enable: true,
               stroke: {
                 color: {
-                  value: "#fff",
+                  value: particleColor,
                 },
                 width: 0.2,
                 opacity: 0.8,
@@ -164,7 +183,7 @@ export function PolygonMask() {
                     value: 150,
                   },
                   color: {
-                    value: "#ffffff",
+                    value: particleColor,
                   },
                   move: {
                     enable: true,

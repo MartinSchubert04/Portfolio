@@ -45,6 +45,8 @@
   --color-contribution-level3: #2ea043;
   --color-contribution-level4: #56d364;
 
+  --color-particles: #ffffe3;
+
   --tw-text-opacity: 1;
   --tw-text-opacity: 1;
   --nav-space: 5rem;
@@ -76,6 +78,8 @@
 
   --color-nav-gradient: #fff;
   --color-nav-gradient: #fff;
+
+  --color-particles: #3f3f46;
 }
 
 * {

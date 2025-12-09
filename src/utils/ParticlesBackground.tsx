@@ -1,10 +1,11 @@
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadAll } from "@tsparticles/all"
 import { useOnInit } from "@hooks/hooks"
 
 export function ParticleBackground() {
   const loaded = useRef(false)
+  const [particleColor, setParticleColor] = useState("#3f3f46")
 
   useOnInit(() => {
     if (loaded.current) return
@@ -15,9 +16,27 @@ export function ParticleBackground() {
     })
   })
 
+  useEffect(() => {
+    const updateColor = () => {
+      const color = getComputedStyle(document.documentElement).getPropertyValue("--color-particles").trim() || "#ffffff"
+      setParticleColor(color)
+    }
+
+    updateColor()
+
+    const observer = new MutationObserver(updateColor)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme", "class"],
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div style={{ backgroundColor: "var(--color-background)" }}>
       <Particles
+        key={particleColor}
         id="tsparticles"
         options={{
           particles: {
@@ -40,6 +59,7 @@ export function ParticleBackground() {
                 startValue: "random",
               },
             },
+            color: { value: particleColor },
           },
           interactivity: {
             events: {
@@ -61,7 +81,6 @@ export function ParticleBackground() {
               },
             },
           },
-          color: { value: "#ffffff" },
           opacity: {
             value: 1,
             animation: {
