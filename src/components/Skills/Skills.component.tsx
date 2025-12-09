@@ -11,7 +11,7 @@ const Skill = ({ name, link, icono }: SkillProps) => {
   return (
     <a
       target="_blank"
-      className="inline-flex items-center text-xs sm:text-sm bg-black/5 dark:bg-(--color-background-item)/15 border border-dashed border-(--color-border) dark:border-(--color-border-shadow)/30  py-1 px-2 rounded-md skill-inner-shadow self-end text-(--color-primary)"
+      className="inline-flex items-center text-xs sm:text-sm bg-(--color-background-item)/15 border border-dashed border-(--color-border) dark:border-(--color-border-shadow)/30  py-1 px-2 rounded-md skill-inner-shadow self-end text-(--color-primary)"
       href={link}
     >
       <div className="size-4 sm:size-4 shrink-0">

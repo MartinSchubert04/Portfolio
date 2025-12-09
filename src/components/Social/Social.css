@@ -1,7 +1,3 @@
-.skill-icon {
-  background-color: var(--color-primary);
-}
-
 @keyframes rotate-3d-in {
   0% {
     transform: rotateY(-180deg) scale(0.5);

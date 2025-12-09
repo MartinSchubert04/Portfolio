@@ -57,7 +57,7 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
         {/* Technologies */}
         <div className="overflow-hidden transition-all duration-300 ease-in-out">
           <div>
-            <h4 className="text-sm md:text-md mt-2 sm:mt-3 mb-2 font-semibold text-[#3f3f46] dark:text-white">
+            <h4 className="text-sm md:text-md mt-2 sm:mt-3 mb-2 font-semibold text-primarytext dark:text-white">
               Technologies & Tools
             </h4>
 

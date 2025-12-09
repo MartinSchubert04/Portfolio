@@ -1,6 +1,7 @@
 import { career } from "@data/career.data"
 import { CareerMain } from "./CareerMain.component"
 import { useState } from "react"
+import "./Career.css"
 
 export interface ICareer {
   imgURL: string
@@ -23,7 +24,7 @@ export interface CareerItermProps {
 const CareerNavItem = ({ careerItem, onSelect }: CareerNavItemProps) => {
   return (
     <div
-      className="text-manrope  relative px-2  py-3 cursor-pointer text-sm sm:text-sm font-normal blur-none text-zinc-400  transition-colors duration-300 md:w-full inline-block md:block  "
+      className="background-fade text-manrope  relative px-2  py-3 cursor-pointer text-sm sm:text-sm font-normal blur-none text-zinc-400  transition-colors duration-300 md:w-full inline-block md:block  "
       onClick={() => onSelect(careerItem)}
     >
       {careerItem.name}

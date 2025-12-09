@@ -1,7 +1,9 @@
 import moon from "./icons/moon.svg"
 import sun from "./icons/sun.svg"
 import speakerSlash from "./icons/speaker-slash.svg"
+import speakerSlashLightMode from "./icons/speaker-slash-lightmode.svg"
 import speaker from "./icons/speaker-high.svg"
+import speakerLightMode from "./icons/speaker-high-lightmode.svg"
 import github from "./icons/github.svg"
 import linkedin from "./icons/linkedin.svg"
 import ts from "./icons/typescript.svg"
@@ -29,8 +31,10 @@ export {
   moon,
   sun,
   speakerSlash,
-  resume,
+  speakerSlashLightMode,
   speaker,
+  speakerLightMode,
+  resume,
   github,
   linkedin,
   ts,

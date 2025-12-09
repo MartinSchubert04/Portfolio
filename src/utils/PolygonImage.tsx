@@ -3,7 +3,6 @@ import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadAll } from "@tsparticles/all"
 import { useOnInit } from "@hooks/hooks"
 import { bear } from "@assets/index"
-import { colors } from "@mui/material"
 
 const DELAY_TIME = 50
 

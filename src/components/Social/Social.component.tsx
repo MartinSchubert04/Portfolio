@@ -15,15 +15,15 @@ export const Social = ({ link, icon }: SocialProps) => {
   return (
     <>
       <div className="flex justify-center items-center w-12 group hover:scale-115 hover:-translate-y-3 transition duration-500">
-        <div className="absolute w-12 h-12 rounded-full bg-(--color-primary) opacity-0 group-hover:opacity-40 transition duration-500"></div>
+        <div className="absolute w-12 h-12 rounded-full bg-(--color-bg-social) opacity-0 group-hover:opacity-40 transition duration-500"></div>
         <div
-          className="flex aspect-square cursor-pointer items-center justify-center rounded-full bg-neutral-400/40"
+          className="flex aspect-square cursor-pointer items-center justify-center rounded-full bg-(--color-bg-social)"
           style={{ width: "40px", zIndex: "100" }}
         >
           <a
             href={link}
             target="blank"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-primarytext"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-(--color-bg-social) "
           >
             <div
               className="skill-icon flex aspect-square cursor-pointer items-center justify-center rounded-full"
@@ -62,9 +62,9 @@ export const SocialSet = () => {
         ))}
 
         <div className="flex justify-center items-center w-12 group hover:scale-115 hover:-translate-y-3 transition duration-500">
-          <div className="absolute w-12 h-12 rounded-full bg-(--color-primary) opacity-0 group-hover:opacity-40 transition duration-500"></div>
+          <div className="absolute w-12 h-12 rounded-full bg-(--color-bg-social) opacity-0 group-hover:opacity-40 transition duration-500"></div>
           <div
-            className="flex aspect-square cursor-pointer items-center justify-center rounded-full bg-neutral-400/40"
+            className="flex aspect-square cursor-pointer items-center justify-center rounded-full bg-(--color-bg-social)"
             style={{ width: "40px", zIndex: "100" }}
           >
             <a onClick={handleCopy} className="flex items-center justify-center w-10 h-10 rounded-full bg-primarytext">

@@ -1,4 +1,13 @@
-import { moon, sun, speakerSlash, speaker, backgroundMusic, clickSound } from "@assets/index"
+import {
+  moon,
+  sun,
+  speakerSlash,
+  speaker,
+  speakerLightMode,
+  backgroundMusic,
+  clickSound,
+  speakerSlashLightMode,
+} from "@assets/index"
 import "./Nav.css"
 import { useState, useEffect, useRef } from "react"
 
@@ -19,7 +28,14 @@ export const Nav = () => {
 
     setTheme(newTheme)
     clickSound?.play()
-    setThemeIcon(theme === "dark" ? sun : moon)
+    setThemeIcon(newTheme === "dark" ? moon : sun)
+
+    if (isPlaying) {
+      setSpeakerIcon(newTheme === "dark" ? speaker : speakerLightMode)
+    } else {
+      setSpeakerIcon(newTheme === "dark" ? speakerSlash : speakerSlashLightMode)
+    }
+
     localStorage.setItem("theme", newTheme)
   }
 
@@ -39,14 +55,14 @@ export const Nav = () => {
     if (isPlaying) {
       audio.pause()
       setIsPlaying(false)
-      setSpeakerIcon(speakerSlash)
+      setSpeakerIcon(theme === "dark" ? speakerSlash : speakerSlashLightMode)
     } else {
       // Si está pausado, intentar reproducir
       audio.play().catch((error) => {
         console.warn("Autoplay bloqueado. El usuario debe interactuar con la página primero.", error)
       })
       setIsPlaying(true)
-      setSpeakerIcon(speaker)
+      setSpeakerIcon(theme === "dark" ? speaker : speakerLightMode)
     }
   }
 

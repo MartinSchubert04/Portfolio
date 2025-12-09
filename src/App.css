@@ -26,6 +26,7 @@
   --color-background: hsl(0, 0%, 13%);
   --color-background-item: #ab66fd;
   --color-background-card: #06030a;
+  --color-bg-social: rgb(255 255 227 / var(--tw-text-opacity));
 
   --color-border: #909092;
   --color-border-shadow: #e7d2f9;
@@ -62,6 +63,7 @@
   --color-background-item: #5f5e5e;
   --color-background-card: #cdcdcd4a;
   --color-background-card-item: #71717a;
+  --color-bg-social: rgb(163, 163, 163, 0.5);
 
   --color-border: hsl(0, 0%, 60%);
   --color-border-secondary: #e4e4e7;
