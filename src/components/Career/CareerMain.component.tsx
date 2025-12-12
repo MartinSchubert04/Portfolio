@@ -1,4 +1,3 @@
-import { linkedin } from "@assets/index"
 import { type CareerItermProps } from "./CareerNav.component"
 import * as Tooltip from "@radix-ui/react-tooltip"
 
