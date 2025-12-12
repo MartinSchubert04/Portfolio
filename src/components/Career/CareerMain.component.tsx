@@ -1,4 +1,6 @@
+import { linkedin } from "@assets/index"
 import { type CareerItermProps } from "./CareerNav.component"
+import * as Tooltip from "@radix-ui/react-tooltip"
 
 export const CareerMain = ({ careerItem }: CareerItermProps) => {
   return (
@@ -6,27 +8,27 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
       <div className="absolute w-[calc(100%-64px)]" style={{ opacity: 1, transform: "none" }}>
         <div className="flex flex-col gap-2 md:flex-row md:justify-between">
           <div className="flex items-center gap-4">
-            <img
-              alt={careerItem.name}
-              width="100"
-              height="100"
-              src={careerItem.imgURL}
-              className="size-10 sm:size-12 rounded-md"
-            />
+            <img alt={careerItem.name} src={careerItem.imgURL} className="h-10 rounded-md" />
 
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
                 <h2 className="text-sm sm:text-lg font-bold text-[#e7d2f9]">{careerItem.name}</h2>
 
-                {/* Icons */}
+                {careerItem.linkedinLink && (
+                  <a
+                    target="_blank"
+                    className="size-4 text-neutral-500"
+                    data-state="closed"
+                    data-slot="tooltip-trigger"
+                    href={careerItem.linkedinLink}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+                    </svg>
+                  </a>
+                )}
 
-                {/* 
-                <a target="_blank" className="size-4 text-neutral-500" href="https://x.com/LJMU">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M214.75,211.71l-62.6-98.38,..."></path>
-                  </svg>
-                </a> */}
-                <a target="_blank" href={careerItem.webLink}>
+                <a target="_blank" className="text-neutral-500" href={careerItem.webLink}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -63,16 +65,47 @@ export const CareerMain = ({ careerItem }: CareerItermProps) => {
 
             <div className="flex flex-wrap gap-2">
               {/* tech stack */}
-              {careerItem.techStack.map((t, i: number) => (
-                <a
-                  key={i}
-                  target="_blank"
-                  className="inline-flex items-center text-xs sm:text-sm bg-black/5 dark:bg-[#ab66fd]/15 border border-dashed border-[#909092] dark:border-[#e7d2f9]/30 py-1 px-2 rounded-md skill-inner-shadow text-[#909092] dark:text-white"
-                  href={t.link}
-                >
-                  <img alt="Python" src={t.img} className="size-4" />
-                </a>
-              ))}
+              <Tooltip.TooltipProvider delayDuration={0} disableHoverableContent>
+                {careerItem.techStack.map((t, i: number) => (
+                  <Tooltip.Root key={i}>
+                    <Tooltip.Trigger asChild>
+                      <a
+                        target="_blank"
+                        className="inline-flex items-center text-xs sm:text-sm bg-(--color-background-item)/15 border border-dashed border-[#909092] dark:border-[#e7d2f9]/30 py-1 px-2 rounded-md skill-inner-shadow text-[#909092] dark:text-white"
+                        href={t.link}
+                      >
+                        <img alt="Python" src={t.img} className="size-4" />
+                      </a>
+                    </Tooltip.Trigger>
+
+                    <Tooltip.Portal>
+                      <Tooltip.Content
+                        sideOffset={12}
+                        className="
+                            animate-in fade-in-0 zoom-in-95
+                            data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95
+                            data-[side=bottom]:slide-in-from-top-2
+                            data-[side=left]:slide-in-from-right-2
+                            data-[side=right]:slide-in-from-left-2
+                            data-[side=top]:slide-in-from-bottom-2
+                            z-50 w-fit origin-(--radix-tooltip-content-transform-origin) 
+                            
+                            rounded-md px-3 py-1.5 text-xs text-balance border-none text-(--color-primary) bg-(--color-bg-tooltip) fill-(--color-background)"
+                        avoidCollisions={false}
+                      >
+                        <p className="">{t.name}</p>
+                        <Tooltip.Arrow
+                          className="
+                              fill-(--color-bg-tooltip)
+                              stroke-none
+                              h-1
+                              "
+                        />
+                      </Tooltip.Content>
+                    </Tooltip.Portal>
+                  </Tooltip.Root>
+                ))}
+              </Tooltip.TooltipProvider>
             </div>
           </div>
 

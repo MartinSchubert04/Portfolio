@@ -12,6 +12,7 @@ export interface ICareer {
   linkedinLink: string
   techStack: {
     img: string
+    name: string
     link: string
   }[]
 }

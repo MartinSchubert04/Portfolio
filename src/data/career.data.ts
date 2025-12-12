@@ -1,4 +1,5 @@
-import { unsam, dcs, python } from "@assets/index"
+import { python, react, ts, cpp, js, kotlin, tailwind, git } from "@assets/index"
+import { unsam, dcs } from "@assets/index"
 
 export const career = [
   {
@@ -7,20 +8,31 @@ export const career = [
     title: "Fullstack developer",
     meta: "Feb 2025 - Today • Buenos Aires, Argentina (On-Site)",
     achievements: [
-      "Developed a responsive user interface (UI) for a hybrid mobile application, significantly enhancing user engagement for JTI.",
-      "Integrated a user-friendly Fixed Deposit feature, contributing to a 15% boost in user adoption on the SaaS platform.",
-      "Built and optimized responsive user interfaces that seamlessly consumed RESTful APIs in a hybrid mobile application.",
+      "Developed a responsive user interface for centralized, grouped Outlook signature assignment, along with backend integration using Azure Active Directory.",
+      "Designed and implemented an application performance monitoring system, including custom backend logic and data processing components.",
     ],
     webLink: "https://dcs.ar",
-    linkedinLink: "https://google.com",
+    linkedinLink: "https://www.linkedin.com/company/dc-solutions",
     techStack: [
       {
         img: python,
+        name: "Python",
         link: "https://www.python.org/",
       },
       {
-        img: python,
+        img: react,
+        name: "React",
         link: "https://www.python.org/",
+      },
+      {
+        img: ts,
+        name: "TypeScript",
+        link: "",
+      },
+      {
+        img: tailwind,
+        name: "Tailwind",
+        link: "",
       },
     ],
   },
@@ -33,16 +45,44 @@ export const career = [
       "Developed a food delivery application as an academic project, implementing backend (API RESTfull), frontend and complete order flow.",
       "Completed fundamental courses in Computer Science (mathematics, algorithms, data structures, object oriented programming and computer architecture).",
     ],
-    webLink: "https://google.com",
-    linkedinLink: "https://google.com",
+    webLink: "https://www.unsam.edu.ar/",
+    linkedinLink: "",
     techStack: [
       {
         img: python,
+        name: "Python",
         link: "https://www.python.org/",
       },
       {
-        img: python,
+        img: react,
+        name: "React",
         link: "https://www.python.org/",
+      },
+      {
+        img: ts,
+        name: "Typescript",
+        link: "",
+      },
+      {
+        img: js,
+        name: "Javascript",
+        link: "",
+      },
+      {
+        img: kotlin,
+        name: "Kotlin",
+        link: "",
+      },
+
+      {
+        img: cpp,
+        name: "C++",
+        link: "",
+      },
+      {
+        img: git,
+        name: "Git",
+        link: "",
       },
     ],
   },
