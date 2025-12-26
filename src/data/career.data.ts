@@ -22,17 +22,17 @@ export const career = [
       {
         img: react,
         name: "React",
-        link: "https://www.python.org/",
+        link: "https://react.dev/",
       },
       {
         img: ts,
         name: "TypeScript",
-        link: "",
+        link: "https://www.typescriptlang.org/",
       },
       {
         img: tailwind,
         name: "Tailwind",
-        link: "",
+        link: "https://tailwindcss.com/",
       },
     ],
   },
@@ -56,33 +56,33 @@ export const career = [
       {
         img: react,
         name: "React",
-        link: "https://www.python.org/",
+        link: "https://react.dev/",
       },
       {
         img: ts,
         name: "Typescript",
-        link: "",
+        link: "https://www.typescriptlang.org/",
       },
       {
         img: js,
         name: "Javascript",
-        link: "",
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
       },
       {
         img: kotlin,
         name: "Kotlin",
-        link: "",
+        link: "https://kotlinlang.org/",
       },
 
       {
         img: cpp,
         name: "C++",
-        link: "",
+        link: "https://en.wikipedia.org/wiki/C%2B%2B",
       },
       {
         img: git,
         name: "Git",
-        link: "",
+        link: "https://git-scm.com/",
       },
     ],
   },
