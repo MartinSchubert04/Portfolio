@@ -1,4 +1,4 @@
-import { algoQuePedir, signpoint, breakout } from "@assets/index"
+import { algoQuePedir, signpoint, breakout, NN } from "@assets/index"
 
 export const projects = [
   {
@@ -16,6 +16,14 @@ export const projects = [
     sourceLink: "https://github.com/MartinSchubert04/Signpoint",
     webLink: "",
     techStack: ["React", "TypeScript", "Python"],
+  },
+  {
+    imgURL: NN,
+    name: "Neural Network",
+    description: "Multiclass NN made with Python and NumPy (no high-level ML frameworks).",
+    sourceLink: "https://github.com/MartinSchubert04/Neural-Network",
+    webLink: "",
+    techStack: ["Python", "Numpy"],
   },
   {
     imgURL: breakout,

@@ -30,8 +30,10 @@ const ProjectTech = ({ nombre }: IProjectProps) => {
 const Project = ({ project }: ProjectProps) => {
   return (
     <div className=" rounded-lg  bg-(--color-background-card) text-card-foreground  shadow-(--color-border-shadow) flex flex-col  card-border bg-card-m min-h-[400px] ">
-      <div className="flex w-full max-h-48 min-h-48 rounded-t-lg flex-col space-y-1.5  pb-2 skeleton relative p-3 gradient-custom">
-        <img className="h-full rounded-md object-contain object-top" src={project.imgURL} />
+      <div className="flex w-full max-h-48 min-h-48 overflow-hidden flex-col space-y-1.5  pb-2 skeleton relative p-3 gradient-custom">
+        <div className="flex justify-center max-h-48 pb-3">
+          <img className="h-full object-contain object-top rounded-md" src={project.imgURL} />{" "}
+        </div>
       </div>
       <div className="px-4 py-2 pt-0 flex flex-col gap-1">
         <div className="font-sans text-lg font-bold text-zinc-500 dark:text-(--color-primary)  mt-2">

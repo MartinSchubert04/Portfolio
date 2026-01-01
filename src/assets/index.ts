@@ -30,6 +30,7 @@ import signpoint from "./images/signpoint.png"
 import breakout from "./images/breakOut.png"
 import dcs from "./images/dcs.png"
 import unsam from "./images/unsam.png"
+import NN from "./images/neuralNetwork.png"
 
 export {
   moon,
@@ -64,4 +65,5 @@ export {
   breakout,
   dcs,
   unsam,
+  NN,
 }
