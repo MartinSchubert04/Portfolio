@@ -51,7 +51,7 @@ export const Header = () => {
       <div className="career-header px-3 pt-6 flex flex-col intro w-full  border-l border-r border-solid border-transparent [border-image:linear-gradient(to_bottom,var(--color-border),transparent)_1] matsu_border_side">
         <div className="flex w-full flex-col justify-center items-center my-5">
           <h1 className="text-primarytext font-bold text-3xl sm:text-6xl ">Martin Schubert</h1>
-          <h3 className="pt-2 text-violet-text text-md sm:text-2xl">• Software Engineer •</h3>
+          <h3 className="pt-2 text-violet-text text-md sm:text-2xl">• Software Developer •</h3>
         </div>
 
         <div className="text-sm font-bold mt-5 sm:mt-7 text-zinc-400 ">Contact with me, here are my socials</div>
