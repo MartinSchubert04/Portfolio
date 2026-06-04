@@ -31,6 +31,13 @@ import breakout from "./images/breakOut.png"
 import dcs from "./images/dcs.png"
 import unsam from "./images/unsam.png"
 import NN from "./images/neuralNetwork.png"
+import aws from "./icons/aws.svg"
+import kube from "./icons/kubernetes.svg"
+import ocp from "./icons/openshift.svg"
+import booklibre from "./images/booklibre.png"
+import postgres from "./icons/postgresql.svg"
+import pong from "./images/pong.jpg"
+import cppNN from "./images/nn.gif"
 
 export {
   moon,
@@ -66,4 +73,11 @@ export {
   dcs,
   unsam,
   NN,
+  aws,
+  kube,
+  ocp,
+  booklibre,
+  postgres,
+  pong,
+  cppNN,
 }
