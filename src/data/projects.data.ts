@@ -1,4 +1,4 @@
-import { algoQuePedir, signpoint, cppNN, booklibre, pong } from "@assets/index"
+import { algoQuePedir, signpoint, cppNN, booklibre, pong, spaceStation, spaceStationVid } from "@assets/index"
 
 export const projects = [
   {
@@ -16,6 +16,14 @@ export const projects = [
     sourceLink: "https://github.com/MartinSchubert04/Booklibre",
     webLink: "",
     techStack: ["Svelte", "React", "TypeScript", "Kotlin", "Spring Boot"],
+  },
+  {
+    imgURL: spaceStationVid,
+    name: "Space station",
+    description: "Real time solar system explorer using NASA APIs in a retro style",
+    sourceLink: "https://github.com/MartinSchubert04/space-station",
+    webLink: "https://martinschubert04.github.io/space-station/",
+    techStack: ["React", "TypeScript"],
   },
   {
     imgURL: signpoint,

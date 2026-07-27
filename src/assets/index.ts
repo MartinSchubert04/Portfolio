@@ -38,6 +38,8 @@ import booklibre from "./images/booklibre.png"
 import postgres from "./icons/postgresql.svg"
 import pong from "./images/pong.jpg"
 import cppNN from "./images/nn.gif"
+import spaceStationVid from "./images/space-station-vid.gif"
+import spaceStation from "./images/space-station.png"
 
 export {
   moon,
@@ -80,4 +82,6 @@ export {
   postgres,
   pong,
   cppNN,
+  spaceStationVid,
+  spaceStation,
 }
