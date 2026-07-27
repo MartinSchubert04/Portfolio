@@ -1,0 +1,19 @@
+.space-scene {
+  position: fixed;
+  inset: 0;
+  /* matches the tsparticles/bear-mask canvas stacking tier used elsewhere in
+     the app — a negative z-index here lands in a different paint bucket and
+     ends up hidden behind normal page content instead of behind it. */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.space-scene canvas {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .space-scene {
+    opacity: 0.55;
+  }
+}

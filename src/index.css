@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Base fill lives on html/body (the true bottom paint layer) instead of on
+   .wrapper/.main-content-container, so fixed-position background decor
+   (SpaceBackground, tsparticles) can show through beneath normal content. */
+html,
+body {
+  background-color: var(--color-background);
+}
+
 @font-face {
   font-family: "Manrope-Bold";
   src: url("./assets/fonts/Manrope-Bold.ttf") format("truetype");

@@ -9,6 +9,7 @@ export default defineConfig({
   build: {
     sourcemap: false,
   },
+  assetsInclude: ["**/*.glb"],
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
