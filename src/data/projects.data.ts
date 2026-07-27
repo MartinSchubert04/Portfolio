@@ -1,4 +1,4 @@
-import { algoQuePedir, signpoint, cppNN, booklibre, pong, spaceStation, spaceStationVid } from "@assets/index"
+import { algoQuePedir, signpoint, cppNN, booklibre, pong, spaceStationVid } from "@assets/index"
 
 export const projects = [
   {
