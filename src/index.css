@@ -1,0 +1,434 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist/wght.css";
+@import "@fontsource-variable/geist-mono/wght.css";
+
+/* Tokens. The table in DESIGN.md section 2 is the source of truth; keep both in sync. */
+@theme {
+  --color-hull: #0b110f;
+  --color-hull-hi: #1a2722;
+  --color-hull-lo: #030605;
+  --color-well: #080d0b;
+  --color-line: #24453b;
+  --color-haze: #8fa9a0;
+  --color-frost: #d9efe7;
+  --color-mint: #5cf2cb;
+  --color-mint-dim: #2bb892;
+  --color-led-1: #14493b;
+  --color-led-2: #1c8468;
+  --color-led-3: #22bf95;
+  --color-amber: #ffb02e;
+  --color-amber-hi: #ffd68a;
+  --color-amber-lo: #b06a08;
+  --color-clay: #16332b;
+  --color-clay-hi: #24554a;
+  --color-clay-lo: #0a1a16;
+  --color-thrust: #ff5a4d;
+
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --radius-console: 20px;
+  --radius-clay: 28px;
+  --radius-well: 12px;
+
+  /* The whole z-index scale. Nothing else gets one. */
+  --z-index-scene: 0;
+  --z-index-content: 10;
+  --z-index-bars: 40;
+  --z-index-skip: 50;
+  --z-index-crt: 60;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-hull);
+    scroll-padding-top: 96px;
+    scroll-padding-bottom: 48px;
+    -webkit-tap-highlight-color: rgb(92 242 203 / 0.2);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--color-hull);
+    color: var(--color-frost);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 26px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-amber);
+    color: var(--color-hull);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-amber);
+    outline-offset: 4px;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  @media (min-width: 768px) {
+    .shell {
+      padding-left: max(32px, env(safe-area-inset-left));
+      padding-right: max(32px, env(safe-area-inset-right));
+    }
+  }
+
+  .display {
+    font-family: var(--font-sans);
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  /* Annotation on a sketch: a date on the trajectory, the name of the selected orbit. */
+  .note {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: var(--color-mint);
+  }
+
+  /* Instrument label inside a console. Never above a section heading. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-haze);
+  }
+
+  .link {
+    color: var(--color-amber);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .link:hover {
+    color: var(--color-amber-hi);
+  }
+
+  /* ---------- Material 1: sketch ---------- */
+
+  .sketch {
+    fill: none;
+    stroke: var(--color-mint-dim);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 7 6;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .sketch-solid {
+    stroke-dasharray: none;
+  }
+
+  .sketch-accent {
+    stroke: var(--color-amber);
+  }
+
+  .wobble {
+    filter: url(#sketch-wobble);
+  }
+
+  /* ---------- Material 2: neumorphic console ---------- */
+
+  .neu {
+    background: var(--color-hull);
+    border-radius: var(--radius-console);
+    box-shadow:
+      10px 10px 24px var(--color-hull-lo),
+      -8px -8px 20px var(--color-hull-hi);
+  }
+
+  .neu-inset {
+    background: var(--color-well);
+    border-radius: var(--radius-well);
+    box-shadow:
+      inset 4px 4px 10px var(--color-hull-lo),
+      inset -3px -3px 8px var(--color-hull-hi);
+  }
+
+  .neu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--color-hull);
+    color: var(--color-frost);
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow:
+      6px 6px 14px var(--color-hull-lo),
+      -5px -5px 12px var(--color-hull-hi);
+  }
+
+  .neu-button:hover {
+    color: var(--color-mint);
+  }
+
+  .neu-button:active,
+  .neu-button[aria-selected="true"],
+  .neu-button[aria-current="true"] {
+    color: var(--color-amber);
+    background: var(--color-well);
+    box-shadow:
+      inset 4px 4px 10px var(--color-hull-lo),
+      inset -3px -3px 8px var(--color-hull-hi);
+  }
+
+  .neu-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: var(--color-hull);
+    color: var(--color-frost);
+    box-shadow:
+      4px 4px 10px var(--color-hull-lo),
+      -3px -3px 8px var(--color-hull-hi);
+  }
+
+  .neu-chip:hover {
+    color: var(--color-amber);
+  }
+
+  /* ---------- Material 3: clay ---------- */
+
+  .clay {
+    border-radius: var(--radius-clay);
+    background: var(--color-clay);
+    box-shadow:
+      inset 6px 6px 14px var(--color-clay-hi),
+      inset -8px -10px 18px var(--color-clay-lo),
+      0 18px 32px -12px var(--color-hull-lo);
+  }
+
+  .clay-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: var(--color-amber);
+    color: var(--color-hull);
+    font-weight: 400;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow:
+      inset 4px 5px 8px var(--color-amber-hi),
+      inset -5px -7px 10px var(--color-amber-lo),
+      0 14px 22px -10px var(--color-hull-lo);
+  }
+
+  .clay-button:focus-visible {
+    outline-color: var(--color-frost);
+  }
+
+  /* ---------- LED matrix (contribution calendar) ---------- */
+
+  .led {
+    border-radius: 4px;
+    background: var(--color-well);
+    box-shadow: inset 1px 1px 2px var(--color-hull-lo);
+  }
+
+  .led[data-level="1"] {
+    background: var(--color-led-1);
+  }
+  .led[data-level="2"] {
+    background: var(--color-led-2);
+  }
+  .led[data-level="3"] {
+    background: var(--color-led-3);
+  }
+  .led[data-level="4"] {
+    background: var(--color-mint);
+  }
+
+  .led[data-level]:not([data-level="0"]) {
+    box-shadow: none;
+  }
+
+  .skeleton {
+    border-radius: 6px;
+    background: var(--color-hull-hi);
+  }
+
+  /* ---------- Scene backdrop ---------- */
+
+  .scene {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-scene);
+    pointer-events: none;
+  }
+
+  .scene[data-dim="true"] {
+    opacity: 0.38;
+  }
+
+  /* ---------- CRT tube (CrtOverlay.tsx) ---------- */
+
+  .crt {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-crt);
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .crt > div,
+  .crt-bezel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Scanlines, highlight and vignette as three backgrounds of one element: one layer to composite
+     over the canvas instead of three. Plain alpha, no mix-blend-mode: a blend layer over a canvas
+     that repaints every frame has to be recomputed every frame. */
+  .crt-glass {
+    background-image:
+      radial-gradient(ellipse at center, rgb(0 0 0 / 0) 66%, rgb(0 0 0 / 0.34) 100%),
+      linear-gradient(125deg, rgb(217 239 231 / 0.045) 0%, rgb(217 239 231 / 0) 38%),
+      repeating-linear-gradient(to bottom, rgb(0 0 0 / 0) 0, rgb(0 0 0 / 0) 2px, rgb(0 0 0 / 0.16) 3px);
+    box-shadow: inset 0 0 70px rgb(0 0 0 / 0.35);
+  }
+
+  /* Larger than the viewport so it can be shifted around without showing an edge */
+  .crt > .crt-noise {
+    inset: -120px;
+    width: auto;
+    height: auto;
+    opacity: 0.12;
+    will-change: transform;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 -0.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .crt-bezel {
+    fill: var(--color-hull-lo);
+  }
+
+  /* Reveal starts visible so the page reads without JavaScript-driven motion. */
+  .reveal {
+    opacity: 1;
+  }
+}
+
+/* Motion. Only transform and opacity (plus color on hover), and only when the visitor allows it. */
+@media (prefers-reduced-motion: no-preference) {
+  .scene {
+    transition: opacity 700ms ease-out;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 600ms ease-out,
+      transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal[data-in="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .neu-button,
+  .neu-chip,
+  .link {
+    transition: color 150ms ease-out;
+  }
+
+  .clay-button,
+  .clay-press {
+    transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .clay-button:hover,
+  .clay-press:hover {
+    transform: translateY(-3px) scale(1.015);
+  }
+
+  .clay-button:active {
+    transform: scale(0.96);
+  }
+
+  .crt:not([data-still="true"]) .crt-noise {
+    animation: crt-noise 0.6s steps(6) infinite;
+  }
+
+  @keyframes crt-noise {
+    0% {
+      transform: translate(0, 0);
+    }
+    20% {
+      transform: translate(-70px, 40px);
+    }
+    40% {
+      transform: translate(50px, -90px);
+    }
+    60% {
+      transform: translate(-100px, -30px);
+    }
+    80% {
+      transform: translate(80px, 70px);
+    }
+    100% {
+      transform: translate(-30px, 100px);
+    }
+  }
+
+  .skeleton {
+    animation: skeleton-pulse 1.4s ease-in-out infinite alternate;
+  }
+
+  @keyframes skeleton-pulse {
+    from {
+      opacity: 0.45;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
